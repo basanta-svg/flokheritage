@@ -215,10 +215,10 @@ h1, h2, h3, h4 {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  column-gap: clamp(16px, 2vw, 32px);
+  justify-content: space-between;
+  column-gap: clamp(24px, 3vw, 48px);
   background: var(--color-cream);
   border: 1px solid var(--charcoal-10);
   border-radius: 999px;
@@ -230,30 +230,19 @@ h1, h2, h3, h4 {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.nav-left,
-.nav-right {
+.nav-main {
   display: none;
   align-items: center;
   gap: clamp(16px, 1.8vw, 28px);
 }
-.nav-left { justify-self: start; }
-.nav-right { justify-self: end; }
 @media (min-width: 980px) {
-  .nav-left, .nav-right { display: flex; }
+  .nav-main { display: flex; }
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-self: center;
-  grid-column: 2;
-}
-@media (max-width: 979px) {
-  .logo {
-    grid-column: 1;
-    justify-self: start;
-  }
 }
 .logo-mark { height: 68px; width: auto; }
 .logo-word {
@@ -360,15 +349,10 @@ h1, h2, h3, h4 {
 /* ---------- Home hero intro (title + info block + banner photo) ---------- */
 .hero-intro {
   padding-top: clamp(120px, 15vw, 172px);
-  padding-bottom: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(16px, 2vw, 28px);
 }
 .hero-intro-top {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: clamp(32px, 6vw, 96px);
-  flex-wrap: wrap;
-  margin-bottom: clamp(28px, 4vw, 48px);
 }
 .hero-intro-title {
   font-family: var(--font-display);
@@ -377,51 +361,7 @@ h1, h2, h3, h4 {
   line-height: 0.9;
   letter-spacing: 0.005em;
   font-size: clamp(40px, 6.4vw, 84px);
-}
-.hero-intro-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  flex: 1 1 auto;
-  max-width: 640px;
-  padding-bottom: 6px;
-}
-.hero-info-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: clamp(16px, 2.4vw, 32px);
-  width: 100%;
-}
-@media (max-width: 700px) {
-  .hero-info-grid { flex-wrap: wrap; }
-}
-.hero-info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.hero-info-item:nth-child(3) {
-  padding-left: clamp(20px, 3vw, 32px);
-  border-left: 1px solid var(--charcoal-20);
-}
-@media (max-width: 700px) {
-  .hero-info-item:nth-child(3) {
-    padding-left: 0;
-    border-left: none;
-  }
-}
-.hero-info-label {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--charcoal-40);
-}
-.hero-info-value {
-  font-family: var(--font-display);
-  font-size: 15px;
-  color: var(--color-charcoal);
+  white-space: nowrap;
 }
 /* ---------- Scroll-driven reveal panel ---------- */
 /* Tall scroll track; the inner .hero-reveal-sticky pins for one viewport
@@ -1221,8 +1161,7 @@ h1, h2, h3, h4 {
 .site-footer {
   background: var(--color-charcoal);
   color: var(--color-cream);
-  padding: 80px 0 0;
-  overflow: hidden;
+  padding: 80px 0;
 }
 .footer-top {
   display: grid;
@@ -1304,30 +1243,6 @@ h1, h2, h3, h4 {
   transition: opacity 0.25s var(--ease);
 }
 .footer-top-link:hover { opacity: 0.6; }
-
-/* Giant brandmark, bleeding to the edges on a warm glow */
-.footer-brandmark {
-  position: relative;
-  text-align: center;
-  padding: 24px 0 0;
-  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(224,122,63,0.45), rgba(224,122,63,0) 70%);
-}
-.footer-brandmark span {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 0.86;
-  letter-spacing: -0.01em;
-  font-size: clamp(56px, 13vw, 200px);
-  color: var(--color-cream);
-}
-.footer-brandmark span:last-child {
-  color: transparent;
-  background: linear-gradient(180deg, var(--color-cream) 0%, rgba(224,122,63,0.5) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
 
 /* ---------- Signature Experiences (Specials) — accordion directory ---------- */
 .exp-list {
