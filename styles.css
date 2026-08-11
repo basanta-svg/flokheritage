@@ -4,8 +4,6 @@
    space and photography rather than colour.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
-
 :root {
   --color-cream: #F7EDE1;
   --color-charcoal: #232323;
@@ -19,8 +17,8 @@
   --cream-70: rgba(247, 237, 225, 0.7);
   --white-70: rgba(255, 255, 255, 0.7);
 
-  --font-display: 'Cinzel', serif;
-  --font-body: 'Lato', sans-serif;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Cambria, Georgia, serif;
 
   --section-pad: clamp(72px, 10vw, 160px);
   --gutter: clamp(24px, 5vw, 64px);
@@ -176,6 +174,35 @@ h1, h2, h3, h4 {
   border-radius: 16px;
 }
 .frame-img img { border-radius: 16px; }
+
+/* ---------- Team ---------- */
+.team-grid {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 8px;
+}
+@media (min-width: 700px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.team-card { text-align: center; }
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 0 20px;
+  background: var(--charcoal-10);
+}
+.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-name { font-size: 18px; margin-bottom: 4px; }
+.team-role {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+}
 
 /* ---------- Buttons / links ---------- */
 .btn-line {
