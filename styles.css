@@ -17,8 +17,8 @@
   --cream-70: rgba(247, 237, 225, 0.7);
   --white-70: rgba(255, 255, 255, 0.7);
 
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-body: Cambria, Georgia, serif;
+  --font-display: Calibri, Arial, Helvetica, sans-serif;
+  --font-body: Calibri, Cambria, Georgia, serif;
 
   --section-pad: clamp(72px, 10vw, 160px);
   --gutter: clamp(24px, 5vw, 64px);
@@ -909,6 +909,33 @@ h1, h2, h3, h4 {
   color: var(--color-charcoal);
   line-height: 1.5;
 }
+
+/* ---------- Framework table (Support Us) ---------- */
+.framework-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.framework-table th,
+.framework-table td {
+  text-align: left;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--charcoal-10);
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.framework-table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+  font-weight: 700;
+  border-bottom: 1px solid var(--charcoal-20);
+}
+.framework-table td:first-child,
+.framework-table th:first-child { font-weight: 600; }
 
 /* ---------- Info block (hours/location) ---------- */
 .info-list dt {
