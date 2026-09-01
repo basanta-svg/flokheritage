@@ -124,6 +124,7 @@
       name: function (v) { return v.trim().length > 1 ? '' : 'Please enter your name.'; },
       phone: function (v) { return v.trim().length === 0 || /^[0-9+()\-\s]{7,}$/.test(v.trim()) ? '' : 'Please enter a valid phone number.'; },
       email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.'; },
+      reason: function (v) { return v ? '' : 'Please choose a reason for contacting us.'; },
       message: function (v) { return v.trim().length > 3 ? '' : 'Please enter a short message.'; }
     },
     'Thank you — your message has been received. We will reply within a day.'

@@ -17,8 +17,8 @@
   --cream-70: rgba(247, 237, 225, 0.7);
   --white-70: rgba(255, 255, 255, 0.7);
 
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-body: Cambria, Georgia, serif;
+  --font-display: Calibri, Arial, Helvetica, sans-serif;
+  --font-body: Calibri, Cambria, Georgia, serif;
 
   --section-pad: clamp(72px, 10vw, 160px);
   --gutter: clamp(24px, 5vw, 64px);
@@ -174,6 +174,47 @@ h1, h2, h3, h4 {
   border-radius: 16px;
 }
 .frame-img img { border-radius: 16px; }
+
+/* ---------- Facts & Figures: stat band ---------- */
+.stat-grid {
+  display: grid;
+  gap: 32px;
+}
+.stat-item {
+  text-align: center;
+  padding-top: 28px;
+  border-top: 1px solid rgba(247, 237, 225, 0.15);
+}
+.stat-item:first-child { padding-top: 0; border-top: none; }
+@media (min-width: 700px) {
+  .stat-grid { grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .stat-item {
+    padding-top: 0;
+    padding-left: 32px;
+    border-top: none;
+    border-left: 1px solid rgba(247, 237, 225, 0.15);
+  }
+  .stat-item:first-child { padding-left: 0; border-left: none; }
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-70);
+}
+.stat-caption {
+  font-size: 13px;
+  color: var(--white-70);
+  margin-top: 6px;
+}
 
 /* ---------- Team ---------- */
 .team-grid {
@@ -868,6 +909,32 @@ h1, h2, h3, h4 {
   color: var(--charcoal-70);
 }
 
+/* ---------- Founder's Message ---------- */
+.founder-portrait {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--charcoal-10);
+}
+.founder-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.quote-mark {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(64px, 9vw, 104px);
+  line-height: 0.5;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--charcoal-40);
+  margin: 20px 0 4px;
+}
+.pull-quote-lg {
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.3;
+}
+.pull-quote-attr.on-dark { color: var(--white-70); }
+
 /* ---------- Visit (hours &amp; location) ---------- */
 .visit-top {
   align-items: start;
@@ -908,6 +975,64 @@ h1, h2, h3, h4 {
   font-size: 16px;
   color: var(--color-charcoal);
   line-height: 1.5;
+}
+
+/* ---------- Framework table (Support Us) ---------- */
+.framework-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.framework-table th,
+.framework-table td {
+  text-align: left;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--charcoal-10);
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.framework-table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+  font-weight: 700;
+  border-bottom: 1px solid var(--charcoal-20);
+}
+.framework-table td:first-child,
+.framework-table th:first-child { font-weight: 600; }
+.section-dark .framework-table th,
+.section-dark .framework-table td { border-bottom-color: rgba(247, 237, 225, 0.15); }
+.section-dark .framework-table th { border-bottom-color: rgba(247, 237, 225, 0.3); color: var(--white-70); }
+
+/* ---------- Panel card (Support Us) ---------- */
+.panel-card {
+  background: var(--color-card);
+  border: 1px solid var(--charcoal-10);
+  border-radius: 20px;
+  padding: clamp(28px, 3vw, 40px);
+  height: 100%;
+}
+.panel-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--charcoal-20);
+  border-radius: 50%;
+  margin-bottom: 22px;
+}
+.panel-card-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: var(--color-charcoal);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ---------- Info block (hours/location) ---------- */
