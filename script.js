@@ -56,6 +56,16 @@
     });
   }
 
+  /* ---------- Mobile menu: About / Architecture dropdown groups ---------- */
+  document.querySelectorAll('.nav-mobile-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var submenu = document.getElementById(toggle.getAttribute('aria-controls'));
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (submenu) submenu.classList.toggle('is-open', !isOpen);
+    });
+  });
+
   /* ---------- Signature Experiences: accordion ---------- */
   document.querySelectorAll('.exp-row:not(.exp-row-static) .exp-row-head').forEach(function (btn) {
     btn.addEventListener('click', function () {
