@@ -203,6 +203,7 @@ h1, h2, h3, h4 {
   line-height: 1;
   letter-spacing: 0.01em;
   margin-bottom: 14px;
+  font-variant-numeric: tabular-nums;
 }
 .stat-label {
   font-size: 12px;
@@ -354,6 +355,65 @@ h1, h2, h3, h4 {
 .nav-link[aria-current="page"]::after {
   right: 0;
 }
+
+/* ---------- Nav dropdown (About) ---------- */
+.nav-dropdown { position: relative; }
+.nav-caret {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  border-right: 1.4px solid currentColor;
+  border-bottom: 1.4px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.25s var(--ease);
+}
+.nav-dropdown:hover .nav-caret,
+.nav-dropdown:focus-within .nav-caret {
+  transform: translateY(1px) rotate(225deg);
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 14px; /* invisible hover bridge to the trigger link */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease), visibility 0.2s;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.nav-dropdown-menu-inner {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--color-cream);
+  border: 1px solid var(--charcoal-10);
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+.nav-dropdown-menu-inner a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  white-space: nowrap;
+}
+.nav-dropdown-menu-inner a:hover { background: var(--charcoal-10); }
+.nav-dropdown-menu-inner a[aria-current="page"] { color: var(--charcoal-70); }
 
 .btn-menu {
   display: flex;

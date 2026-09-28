@@ -130,6 +130,56 @@
     'Thank you — your message has been received. We will reply within a day.'
   );
 
+  /* ---------- Facts & Figures: rolling number count-up ---------- */
+  var statValues = document.querySelectorAll('.stat-value[data-count-to]');
+  if (statValues.length) {
+    var statsReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var formatStat = function (n) { return n.toLocaleString('en-US'); };
+
+    var animateStat = function (el) {
+      var target = parseInt(el.getAttribute('data-count-to'), 10);
+      if (isNaN(target)) return;
+
+      if (statsReduceMotion) {
+        el.textContent = formatStat(target);
+        return;
+      }
+
+      var duration = 1600;
+      var start = null;
+
+      var step = function (timestamp) {
+        if (start === null) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic — fast start, gentle landing
+        el.textContent = formatStat(Math.round(target * eased));
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = formatStat(target);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    statValues.forEach(function (el) { el.textContent = '0'; });
+
+    if ('IntersectionObserver' in window) {
+      var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateStat(entry.target);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      statValues.forEach(function (el) { statObserver.observe(el); });
+    } else {
+      statValues.forEach(function (el) { el.textContent = formatStat(parseInt(el.getAttribute('data-count-to'), 10)); });
+    }
+  }
+
   /* ---------- Inside the Manor: museum floor guide ---------- */
   var manorGuide = document.getElementById('manor-guide');
   if (manorGuide) {
