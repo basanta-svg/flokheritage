@@ -6,7 +6,7 @@
 <title>Signature Experiences — Folk Heritage</title>
 <meta name="description" content="Signature experiences at Folk Heritage — archery, weaving, traditional dress, weddings, astrology and more in Kawajangsa, Thimphu.">
 <link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -21,9 +21,26 @@
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="specials.html" aria-current="page">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
-      <a class="nav-link" href="architecture.html">Architecture</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" href="architecture.html">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="architecture.html">Architecture</a>
+            <a href="inside-the-manor.html">Inside the Manor</a>
+          </div>
+        </div>
+      </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
-      <a class="nav-link" href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="about.html">About Us</a>
+            <a href="about-advisory-committee.html">Advisory Committee</a>
+            <a href="about-our-team.html">Our Team</a>
+          </div>
+        </div>
+      </div>
       <a class="nav-link" href="contact.html">Contact</a>
       <a class="nav-link" href="support.html">Support Us</a>
       </nav>
@@ -37,8 +54,11 @@
     <a href="specials.html" aria-current="page">Specials</a>
     <a href="treasures.html">Treasures</a>
     <a href="architecture.html">Architecture</a>
+    <a href="inside-the-manor.html">Inside the Manor</a>
     <a href="announcement.html">Announcement</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
+    <a href="about-advisory-committee.html">Advisory Committee</a>
+    <a href="about-our-team.html">Our Team</a>
     <a href="contact.html">Contact</a>
     <a href="support.html">Support Us</a>
   </nav>
@@ -61,6 +81,7 @@
         <p class="lede" style="margin-top: 28px;">The Folk Heritage Craft Village was established to commemorate the 70th Birth Anniversary of His Majesty the Fourth Druk Gyalpo, Jigme Singye Wangchuck. It reflects His Majesty's enduring commitment to preserving Bhutan's cultural heritage through the continuity of traditional knowledge and craftsmanship.</p>
         <p style="margin-top: 16px; color: var(--charcoal-70);">Located within the Folk Heritage Museum, the Craft Village provides local artisans with a dedicated space to create, demonstrate, and market traditional crafts while offering visitors an authentic experience of Bhutan's living heritage. Visitors can engage with skilled artisans, learn about traditional techniques, and appreciate the cultural significance of Bhutan's diverse craft traditions.</p>
         <p style="margin-top: 16px; color: var(--charcoal-70);">Built using traditional rammed-earth architecture, the Craft Village is a living cultural space that supports artisan livelihoods, strengthens the transmission of traditional knowledge, and contributes to the preservation of Bhutan's rich cultural heritage.</p>
+        <p style="margin-top: 16px; color: var(--charcoal-70);">The Craft Village offers a diverse collection of authentic, locally made products, including masks, traditional paintings, jewelry, garments, and other handcrafted creations by Bhutanese artisans &mdash; each piece a meaningful souvenir, reflecting the richness of Bhutanese culture and the skill of its traditional craftsmanship.</p>
       </div>
       <div class="welcome-image frame-img">
         <img src="assets/image/DSC_0066.JPG" alt="Traditional rammed-earth building of the Folk Heritage Craft Village" loading="lazy">
@@ -94,7 +115,7 @@
           </button>
           <div class="exp-row-panel">
             <div class="exp-row-panel-inner">
-              <p class="exp-row-desc">The museum is an ideal destination for students and scholars to study and learn about medieval Bhutan's way of life.</p>
+              <p class="exp-row-desc">The museum is an ideal destination for students and scholars to study Bhutan's rural way of life and traditional culture. Visitors can explore how people lived in the past, including changes in daily work, food, clothing and traditions, and the museum also showcases folk games and traditional activities. It serves as a field-based learning site where visitors can observe and study Bhutanese heritage and its relevance to present-day cultural evolution.</p>
             </div>
           </div>
         </div>
@@ -107,7 +128,7 @@
           </button>
           <div class="exp-row-panel">
             <div class="exp-row-panel-inner">
-              <p class="exp-row-desc">Though located in the heart of Thimphu, the museum is a tranquil oasis, offering an ideal setting for meditation and quality time with loved ones. Further, a restaurant will provide guests all the flavours of Bhutan.</p>
+              <p class="exp-row-desc">Though located in the heart of Thimphu, the museum offers a peaceful setting where visitors can slow down, meditate, spend quality time with loved ones, and experience a quieter side of the city. The traditional setting and surroundings provide an inviting space for reflection, relaxation and meaningful time together. The Folk Heritage Restaurant complements the experience by offering guests authentic Bhutanese cuisine and traditional dishes in a setting connected to the country's culinary heritage.</p>
             </div>
           </div>
         </div>
@@ -120,7 +141,7 @@
           </button>
           <div class="exp-row-panel">
             <div class="exp-row-panel-inner">
-              <p class="exp-row-desc">At the courtyard of the museum, you will see women involved in weaving traditional Bhutanese dresses. You could have a try, if interested.</p>
+              <p class="exp-row-desc">In the museum courtyard, visitors can observe women involved in traditional Bhutanese weaving using techniques passed down through generations — an opportunity to learn about the skill, patience and cultural significance behind Bhutan's woven textiles. Interested visitors are welcome to try weaving under guidance and gain a hands-on appreciation of this important living tradition.</p>
             </div>
           </div>
         </div>
@@ -154,12 +175,12 @@
         <div class="exp-row">
           <button class="exp-row-head" aria-expanded="false">
             <span class="exp-row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 2h4v3.5l2 2.3v12.2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V7.8l2-2.3V2z"/><path d="M9 13.5h6"/></svg></span>
-            <span class="exp-row-title">Brewing &amp; Roasting</span>
+            <span class="exp-row-title">Experience Bhutanese Brewing and Roasting Traditions</span>
             <span class="exp-row-toggle" aria-hidden="true"></span>
           </button>
           <div class="exp-row-panel">
             <div class="exp-row-panel-inner">
-              <p class="exp-row-desc">From the museum's experts, watch and take part in live demonstrations of Ara brewing — the traditional Bhutanese liquor — alongside the roasting of rice using age-old methods. You could also taste your own product.</p>
+              <p class="exp-row-desc">The Folk Heritage Museum offers live demonstrations of traditional Ara brewing, a long-standing Bhutanese practice using locally sourced grains such as wheat and maize. Visitors can learn about the traditional brewing process and, where available, participate in the experience and taste the freshly prepared Ara. The museum also demonstrates the preparation of roasted rice, a traditional Bhutanese food commonly enjoyed with butter tea.</p>
             </div>
           </div>
         </div>
@@ -190,22 +211,28 @@
           </div>
         </div>
 
-        <div class="exp-row exp-row-static">
-          <div class="exp-row-head">
+        <div class="exp-row">
+          <button class="exp-row-head" aria-expanded="false">
             <span class="exp-row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span>
             <span class="exp-row-title">Experience the Exquisite Traditional Bhutanese Songs and Dances</span>
+            <span class="exp-row-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="exp-row-panel">
+            <div class="exp-row-panel-inner">
+              <p class="exp-row-desc">The museum's cultural team welcomes visitors with traditional Bhutanese songs and dance performances. Visitors are also invited to join the performance and learn traditional Bhutanese movements and dance steps under the team's guidance.</p>
+            </div>
           </div>
         </div>
 
         <div class="exp-row">
           <button class="exp-row-head" aria-expanded="false">
             <span class="exp-row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>
-            <span class="exp-row-title">The Ultimate Shopping Journey</span>
+            <span class="exp-row-title">The Ultimate Shopping</span>
             <span class="exp-row-toggle" aria-hidden="true"></span>
           </button>
           <div class="exp-row-panel">
             <div class="exp-row-panel-inner">
-              <p class="exp-row-desc">The museum showcases a remarkable collection of artifacts, garments, and other creations crafted by local Bhutanese artisans under the Tarayana Foundation projects. Each item is a perfect souvenir, capturing the essence of Bhutanese culture and craftsmanship.</p>
+              <p class="exp-row-desc">The museum showcases a curated collection of garments, textiles, jewellery, paintings, woodcrafts and other products made by Bhutanese artisans. Each piece reflects traditional skills, materials and design practices that continue to form part of Bhutan's cultural heritage. These locally crafted products are available at the Folk Heritage Craft Village and the Museum Souvenir Shop &mdash; every purchase provides meaningful support to Bhutanese artisans and the continuation of traditional craftsmanship.</p>
             </div>
           </div>
         </div>

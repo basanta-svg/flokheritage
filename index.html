@@ -6,7 +6,7 @@
 <title>Folk Heritage — Restaurant &amp; Museum, Kawajangsa, Thimphu</title>
 <meta name="description" content="Folk Heritage is a restaurant and living museum in Kawajangsa, Thimphu — refined Bhutanese-inspired cuisine served among preserved textiles, woodwork and heritage architecture.">
 <link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -21,9 +21,26 @@
       <a class="nav-link" href="index.html" aria-current="page">Home</a>
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
-      <a class="nav-link" href="architecture.html">Architecture</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" href="architecture.html">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="architecture.html">Architecture</a>
+            <a href="inside-the-manor.html">Inside the Manor</a>
+          </div>
+        </div>
+      </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
-      <a class="nav-link" href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="about.html">About Us</a>
+            <a href="about-advisory-committee.html">Advisory Committee</a>
+            <a href="about-our-team.html">Our Team</a>
+          </div>
+        </div>
+      </div>
       <a class="nav-link" href="contact.html">Contact</a>
       <a class="nav-link" href="support.html">Support Us</a>
       </nav>
@@ -37,8 +54,11 @@
     <a href="specials.html">Specials</a>
     <a href="treasures.html">Treasures</a>
     <a href="architecture.html">Architecture</a>
+    <a href="inside-the-manor.html">Inside the Manor</a>
     <a href="announcement.html">Announcement</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
+    <a href="about-advisory-committee.html">Advisory Committee</a>
+    <a href="about-our-team.html">Our Team</a>
     <a href="contact.html">Contact</a>
     <a href="support.html">Support Us</a>
   </nav>
@@ -73,15 +93,19 @@
 
   <!-- Founder's Message -->
   <section class="section">
-    <div class="wrap grid grid-2" style="align-items: center;">
-      <div class="frame-img founder-portrait">
+    <div class="wrap grid grid-2" style="align-items: start;">
+      <div class="frame-img founder-portrait" style="position: sticky; top: 120px;">
         <img src="assets/image/Her-Majesty-Dorji-Wangmo-Wangchuck.jpg" alt="Her Majesty Ashi Dorji Wangmo Wangchuck, Queen Mother of Bhutan and founder of Folk Heritage" loading="lazy">
       </div>
       <div>
         <p class="eyebrow">A Message from the Founder</p>
         <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="pull-quote pull-quote-lg" style="max-width: none;">Bhutan is blessed with a rich cultural and spiritual heritage that forms the foundation of our national identity.</p>
-        <p class="pull-quote-attr" style="margin-top: 28px;">Her Majesty Ashi Dorji Wangmo Wangchuck<br>Queen Mother of Bhutan &middot; Founder &amp; Royal Patron</p>
+        <h2 class="h-lg" style="margin-top: -8px;">Message from the Honorable Founding Patron</h2>
+        <p style="margin-top: 20px; color: var(--charcoal-70);">Bhutan is blessed with a rich cultural and spiritual heritage that forms the foundation of our national identity. As our society encounters rapid change in the modern world, it is our collective responsibility to safeguard the traditions, knowledge, skills, and values that define who we are.</p>
+        <p style="margin-top: 16px; color: var(--charcoal-70);">When the Folk Heritage Museum was established in 1997, I wondered whether the time had come for such an institution. The years since have affirmed that it was a timely and farsighted initiative. The Museum has become an important place where our people, particularly younger generations, can learn about Bhutan's traditional way of life and understand the significance of our cultural heritage.</p>
+        <p style="margin-top: 16px; color: var(--charcoal-70);">I believe that heritage must not simply be preserved as objects within a museum; the knowledge, skills, and craftsmanship behind them must also remain alive. Our traditional practices must therefore be renewed, practiced, and passed on to future generations.</p>
+        <p style="margin-top: 16px; color: var(--charcoal-70);">The Folk Heritage Museum is a pioneering effort in this endeavor. I hope it will continue to inspire pride in our heritage and encourage each of us to become responsible custodians of Bhutan's living traditions, ensuring that they remain vibrant and meaningful for generations to come.</p>
+        <p class="pull-quote-attr" style="margin-top: 28px;">Her Majesty Queen Mother Dorji Wangmo Wangchuck<br>Royal Patron, Folk Heritage Museum</p>
       </div>
     </div>
   </section>
@@ -99,19 +123,19 @@
       <!-- SAMPLE FIGURES — replace with actual monthly visitor counts before publishing -->
       <div class="stat-grid">
         <div class="stat-item">
-          <p class="stat-value">1,240</p>
+          <p class="stat-value" data-count-to="1240">1,240</p>
           <p class="stat-label">Foreign Visitors</p>
         </div>
         <div class="stat-item">
-          <p class="stat-value">860</p>
+          <p class="stat-value" data-count-to="860">860</p>
           <p class="stat-label">Regional Visitors</p>
         </div>
         <div class="stat-item">
-          <p class="stat-value">2,150</p>
+          <p class="stat-value" data-count-to="2150">2,150</p>
           <p class="stat-label">Bhutanese Visitors</p>
         </div>
         <div class="stat-item">
-          <p class="stat-value">25</p>
+          <p class="stat-value" data-count-to="25">25</p>
           <p class="stat-label">Years Preserving Heritage</p>
           <p class="stat-caption">Since 2001</p>
         </div>
@@ -275,10 +299,10 @@
       <div class="grid grid-4">
         <article class="card">
           <div class="card-media">
-            <img src="assets/image/textile%20stall.jpg" alt="Hand-woven ceremonial textile at the Folk Heritage textile stall" loading="lazy">
-            <span class="card-tag">Textile</span>
+            <img src="assets/image/opening%20ceremony%20with%20her%20royal%20higues.jpg" alt="Ceremonial hat of His Majesty Jigme Dorji Wangchuck on display" loading="lazy">
+            <span class="card-tag">Regalia</span>
           </div>
-          <h3 class="card-title" style="font-size: 16px;">Cham Dance Costume</h3>
+          <h3 class="card-title" style="font-size: 16px;">Ceremonial Hat of His Majesty Jigme Dorji Wangchuck</h3>
         </article>
         <article class="card">
           <div class="card-media">
