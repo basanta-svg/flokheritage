@@ -442,18 +442,19 @@ h1, h2, h3, h4 {
 .menu-open .btn-menu span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .menu-open .btn-menu span:nth-child(2) { opacity: 0; }
 .menu-open .btn-menu span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-.menu-open .btn-menu span { background: var(--color-cream) !important; }
 
 .nav-mobile {
   position: fixed;
   inset: 0;
-  background: var(--color-charcoal);
+  background: var(--color-cream);
   z-index: 550;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 14px;
+  padding: 96px 24px 40px;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -464,14 +465,77 @@ h1, h2, h3, h4 {
   visibility: visible;
   transform: translateY(0);
 }
+.nav-mobile-logo {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+}
 .nav-mobile a {
   font-family: var(--font-display);
-  font-size: clamp(22px, 4.5vw, 30px);
-  color: var(--color-cream);
+  font-size: clamp(16px, 4vw, 20px);
+  color: var(--color-charcoal);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
 }
 .nav-mobile a[aria-current="page"] { opacity: 0.55; }
+
+.nav-mobile-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.nav-mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(16px, 4vw, 20px);
+  color: var(--color-charcoal);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nav-mobile-toggle.is-active { opacity: 0.55; }
+.nav-mobile-caret {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s var(--ease);
+}
+.nav-mobile-toggle[aria-expanded="true"] .nav-mobile-caret { transform: rotate(225deg); }
+.nav-mobile-submenu {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 100%;
+  transition: grid-template-rows 0.3s var(--ease);
+}
+.nav-mobile-submenu.is-open { grid-template-rows: 1fr; }
+.nav-mobile-submenu-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+}
+.nav-mobile-submenu a {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 3.4vw, 17px);
+  color: var(--charcoal-70);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.nav-mobile-submenu a[aria-current="page"] { color: var(--color-charcoal); opacity: 0.55; }
 .menu-open { overflow: hidden; }
 
 /* ---------- Home hero intro (title + info block + banner photo) ---------- */

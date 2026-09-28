@@ -6,7 +6,7 @@
 <title>Our Team — Folk Heritage</title>
 <meta name="description" content="The staff of the Folk Heritage Museum — caring for the collection, the grounds and every visitor who walks through, Kawajangsa, Thimphu.">
 <link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -50,15 +50,30 @@
     </div>
   </div>
   <nav class="nav-mobile" aria-label="Mobile">
+    <img class="nav-mobile-logo" src="assets/image/logo.png" alt="Folk Heritage" width="56" height="56">
     <a href="index.html">Home</a>
     <a href="specials.html">Specials</a>
     <a href="treasures.html">Treasures</a>
-    <a href="architecture.html">Architecture</a>
-    <a href="inside-the-manor.html">Inside the Manor</a>
+    <div class="nav-mobile-group">
+      <button type="button" class="nav-mobile-toggle" aria-expanded="false" aria-controls="mobileArchitectureMenu">Architecture<span class="nav-mobile-caret" aria-hidden="true"></span></button>
+      <div class="nav-mobile-submenu" id="mobileArchitectureMenu">
+        <div class="nav-mobile-submenu-inner">
+          <a href="architecture.html">Architecture</a>
+          <a href="inside-the-manor.html">Inside the Manor</a>
+        </div>
+      </div>
+    </div>
     <a href="announcement.html">Announcement</a>
-    <a href="about.html">About Us</a>
-    <a href="about-advisory-committee.html">Advisory Committee</a>
-    <a href="about-our-team.html" aria-current="page">Our Team</a>
+    <div class="nav-mobile-group">
+      <button type="button" class="nav-mobile-toggle is-active" aria-expanded="true" aria-controls="mobileAboutMenu">About<span class="nav-mobile-caret" aria-hidden="true"></span></button>
+      <div class="nav-mobile-submenu is-open" id="mobileAboutMenu">
+        <div class="nav-mobile-submenu-inner">
+          <a href="about.html">About Us</a>
+          <a href="about-advisory-committee.html">Advisory Committee</a>
+          <a href="about-our-team.html" aria-current="page">Our Team</a>
+        </div>
+      </div>
+    </div>
     <a href="contact.html">Contact</a>
     <a href="support.html">Support Us</a>
   </nav>
