@@ -1044,6 +1044,9 @@ h1, h2, h3, h4 {
   object-fit: cover;
   object-position: top center;
 }
+@media (min-width: 800px) {
+  .sticky-portrait { position: sticky; top: 120px; }
+}
 .quote-mark {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
