@@ -198,6 +198,7 @@
     var manorImg = manorGuide.querySelector('#manorGuideImg');
     var manorName = manorGuide.querySelector('#manorGuideName');
     var manorDesc = manorGuide.querySelector('#manorGuideDesc');
+    var manorCta = manorGuide.querySelector('#manorGuideCta');
     var manorReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     manorTabs.forEach(function (tab) {
@@ -216,6 +217,10 @@
           manorImg.alt = tab.dataset.alt;
           manorName.textContent = tab.dataset.name;
           manorDesc.textContent = tab.dataset.desc;
+          if (manorCta && tab.dataset.href) {
+            manorCta.href = tab.dataset.href;
+            manorCta.innerHTML = (tab.dataset.cta || 'Explore') + ' <span class="arrow">&rarr;</span>';
+          }
         };
 
         if (manorReduceMotion || !manorPanel) {

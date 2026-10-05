@@ -92,50 +92,85 @@
     <img src="assets/image/DSC07975.JPG" alt="Wooden upper storey and rammed-earth tower of the Folk Heritage building, seen through pine trees" loading="lazy" style="width:100%; height: 70vh; object-fit: cover;">
   </figure>
 
-  <!-- Floor cards -->
-  <section class="section">
+  <!-- Inside the Manor: museum floor guide -->
+  <section class="section manor-guide-section" id="manor-guide">
     <div class="wrap">
-      <p class="eyebrow">The Walk</p>
-      <h2 class="h-xl" style="margin-bottom: 48px;">Four floors, one house.</h2>
+      <div class="manor-guide-header">
+        <p class="eyebrow">The Walk</p>
+        <h2 class="h-xl">Four floors, one house.</h2>
+        <p class="lede" style="margin-top: 16px;">Select a room below, then step inside for the full walk-through.</p>
+      </div>
 
-      <div class="grid grid-2" style="row-gap: 56px;">
+      <div class="manor-guide-body">
+        <div class="manor-guide-nav" role="tablist" aria-label="Floors of the manor">
+          <button class="manor-guide-tab is-active"
+            role="tab" aria-selected="true"
+            data-num="01" data-name="Entrance"
+            data-image="assets/image/DSC07975.JPG"
+            data-alt="Wooden entrance facade of the Folk Heritage building among pine trees"
+            data-desc="Step into a realm where tradition and craftsmanship are revered and preserved. The stone-paved courtyard and timber facade set the tone for what lies inside — a working farmhouse turned living museum, restored rather than reconstructed. Enter this cultural enigma, for an unforgettable experience."
+            data-href="entrance.html" data-cta="Explore the Entrance">
+            <span class="manor-guide-num">01</span>
+            <span class="manor-guide-name-col">
+              <span class="manor-guide-name">Entrance</span>
+              <span class="manor-guide-hint">First impressions</span>
+            </span>
+            <span class="manor-guide-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+          <button class="manor-guide-tab"
+            role="tab" aria-selected="false"
+            data-num="02" data-name="Ground Floor"
+            data-image="assets/image/DSC_0062.JPG"
+            data-alt="Ground floor courtyard with stone walls, Folk Heritage building"
+            data-desc="Stroll through the three-room ground floor, a bustling storehouse and shelter for domestic animals in the past. Its rammed-earth walls and low, stone-flagged rooms once kept grain, tools and livestock safe through Thimphu's winters. See medieval Bhutan."
+            data-href="ground-floor.html" data-cta="Explore the Ground Floor">
+            <span class="manor-guide-num">02</span>
+            <span class="manor-guide-name-col">
+              <span class="manor-guide-name">Ground Floor</span>
+              <span class="manor-guide-hint">Storehouse &amp; stable</span>
+            </span>
+            <span class="manor-guide-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+          <button class="manor-guide-tab"
+            role="tab" aria-selected="false"
+            data-num="03" data-name="Middle Floor"
+            data-image="assets/image/DSC_0066.JPG"
+            data-alt="Tiered wooden roof and rammed-earth tower of the Folk Heritage building"
+            data-desc="The middle floor, known as the Barthog, with its two rooms, served as a storeroom. Here, one can experience the traditional Bhutanese methods of storage — timber bins, hanging racks and dry, wind-sheltered rooms built to keep a household's provisions through the year."
+            data-href="middle-floor.html" data-cta="Explore the Middle Floor">
+            <span class="manor-guide-num">03</span>
+            <span class="manor-guide-name-col">
+              <span class="manor-guide-name">Middle Floor</span>
+              <span class="manor-guide-hint">The Barthog store</span>
+            </span>
+            <span class="manor-guide-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+          <button class="manor-guide-tab"
+            role="tab" aria-selected="false"
+            data-num="04" data-name="Top Floor"
+            data-image="assets/image/DSC08031.JPG"
+            data-alt="Carved wooden window on the upper storey, Folk Heritage building"
+            data-desc="The top floor, with its three rooms, was the heart of the home — a lively hub with the family kitchen, a welcoming living room, and a revered altar. Lit by trefoil windows and warmed by the hearth, it was where the household gathered, ate and prayed together."
+            data-href="top-floor.html" data-cta="Explore the Top Floor">
+            <span class="manor-guide-num">04</span>
+            <span class="manor-guide-name-col">
+              <span class="manor-guide-name">Top Floor</span>
+              <span class="manor-guide-hint">Kitchen, hearth &amp; altar</span>
+            </span>
+            <span class="manor-guide-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
 
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/image/DSC07975.JPG" alt="Wooden entrance facade of the Folk Heritage building among pine trees" loading="lazy">
-            <span class="card-tag">01 &middot; First Impressions</span>
+        <div class="manor-guide-panel">
+          <div class="manor-guide-media">
+            <img id="manorGuideImg" src="assets/image/DSC07975.JPG" alt="Wooden entrance facade of the Folk Heritage building among pine trees" loading="lazy">
           </div>
-          <h3 class="card-title" style="font-size: 20px;">Entrance</h3>
-          <p class="card-desc" style="max-width: none;">Step into a realm where tradition and craftsmanship are revered and preserved. The stone-paved courtyard and timber facade set the tone for what lies inside — a working farmhouse turned living museum, restored rather than reconstructed. Enter this cultural enigma, for an unforgettable experience.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/image/DSC_0062.JPG" alt="Ground floor courtyard with stone walls, Folk Heritage building" loading="lazy">
-            <span class="card-tag">02 &middot; Storehouse &amp; Stable</span>
+          <div class="manor-guide-text">
+            <p class="manor-guide-name-lg" id="manorGuideName">Entrance</p>
+            <p class="manor-guide-desc" id="manorGuideDesc">Step into a realm where tradition and craftsmanship are revered and preserved. The stone-paved courtyard and timber facade set the tone for what lies inside — a working farmhouse turned living museum, restored rather than reconstructed. Enter this cultural enigma, for an unforgettable experience.</p>
+            <a class="btn-line" id="manorGuideCta" href="entrance.html" style="margin-top: 20px;">Explore the Entrance <span class="arrow">&rarr;</span></a>
           </div>
-          <h3 class="card-title" style="font-size: 20px;">Ground Floor</h3>
-          <p class="card-desc" style="max-width: none;">Stroll through the three-room ground floor, a bustling storehouse and shelter for domestic animals in the past. Its rammed-earth walls and low, stone-flagged rooms once kept grain, tools and livestock safe through Thimphu's winters. See medieval Bhutan.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/image/DSC_0066.JPG" alt="Tiered wooden roof and rammed-earth tower of the Folk Heritage building" loading="lazy">
-            <span class="card-tag">03 &middot; The Barthog Store</span>
-          </div>
-          <h3 class="card-title" style="font-size: 20px;">Middle Floor</h3>
-          <p class="card-desc" style="max-width: none;">The middle floor, known as the Barthog, with its two rooms, served as a storeroom. Here, one can experience the traditional Bhutanese methods of storage — timber bins, hanging racks and dry, wind-sheltered rooms built to keep a household's provisions through the year.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-media">
-            <img src="assets/image/DSC08031.JPG" alt="Carved wooden window on the upper storey, Folk Heritage building" loading="lazy">
-            <span class="card-tag">04 &middot; Kitchen, Hearth &amp; Altar</span>
-          </div>
-          <h3 class="card-title" style="font-size: 20px;">Top Floor</h3>
-          <p class="card-desc" style="max-width: none;">The top floor, with its three rooms, was the heart of the home — a lively hub with the family kitchen, a welcoming living room, and a revered altar. Lit by trefoil windows and warmed by the hearth, it was where the household gathered, ate and prayed together.</p>
-        </article>
-
+        </div>
       </div>
     </div>
   </section>
