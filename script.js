@@ -141,6 +141,13 @@
   );
 
   /* ---------- Facts & Figures: rolling number count-up ---------- */
+  var yearsSinceEl = document.querySelector('.stat-value[data-since]');
+  if (yearsSinceEl) {
+    var sinceYear = parseInt(yearsSinceEl.getAttribute('data-since'), 10);
+    var yearsElapsed = new Date().getFullYear() - sinceYear;
+    yearsSinceEl.setAttribute('data-count-to', yearsElapsed);
+  }
+
   var statValues = document.querySelectorAll('.stat-value[data-count-to]');
   if (statValues.length) {
     var statsReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -198,6 +205,7 @@
     var manorImg = manorGuide.querySelector('#manorGuideImg');
     var manorName = manorGuide.querySelector('#manorGuideName');
     var manorDesc = manorGuide.querySelector('#manorGuideDesc');
+    var manorCta = manorGuide.querySelector('#manorGuideCta');
     var manorReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     manorTabs.forEach(function (tab) {
@@ -216,6 +224,10 @@
           manorImg.alt = tab.dataset.alt;
           manorName.textContent = tab.dataset.name;
           manorDesc.textContent = tab.dataset.desc;
+          if (manorCta && tab.dataset.href) {
+            manorCta.href = tab.dataset.href;
+            manorCta.innerHTML = (tab.dataset.cta || 'Explore') + ' <span class="arrow">&rarr;</span>';
+          }
         };
 
         if (manorReduceMotion || !manorPanel) {
@@ -232,6 +244,47 @@
         }, 260);
       });
     });
+  }
+
+  /* ---------- Advisory Committee: organogram reveal ---------- */
+  var orgChart = document.querySelector('.org-chart');
+  if (orgChart) {
+    var orgReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (orgReduceMotion || !('IntersectionObserver' in window)) {
+      orgChart.classList.add('is-visible');
+    } else {
+      var orgObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            orgChart.classList.add('is-visible');
+          } else {
+            orgChart.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0.25 });
+      orgObserver.observe(orgChart);
+    }
+  }
+
+  /* ---------- Team grid: reveal ---------- */
+  var teamGrid = document.querySelector('.team-grid');
+  if (teamGrid) {
+    var teamReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (teamReduceMotion || !('IntersectionObserver' in window)) {
+      teamGrid.classList.add('is-visible');
+    } else {
+      var teamObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            teamGrid.classList.add('is-visible');
+            teamObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      teamObserver.observe(teamGrid);
+    }
   }
 
   /* ---------- Scroll-driven hero reveal ---------- */
