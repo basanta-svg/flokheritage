@@ -497,6 +497,18 @@ h1, h2, h3, h4 {
   color: var(--color-cream);
   background: linear-gradient(135deg, var(--color-charcoal), #3a3a3a);
 }
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--charcoal-10);
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .team-card-body { padding: 20px 18px 24px; }
 .team-name { font-size: 16px; margin-bottom: 6px; }
 .team-role {
@@ -528,6 +540,10 @@ h1, h2, h3, h4 {
 .team-grid.is-visible .team-card:nth-child(8) { transition-delay: 0.4s; }
 .team-grid.is-visible .team-card:nth-child(9) { transition-delay: 0.45s; }
 .team-grid.is-visible .team-card:nth-child(10) { transition-delay: 0.5s; }
+.team-grid.is-visible .team-card:nth-child(11) { transition-delay: 0.55s; }
+.team-grid.is-visible .team-card:nth-child(12) { transition-delay: 0.6s; }
+.team-grid.is-visible .team-card:nth-child(13) { transition-delay: 0.65s; }
+.team-grid.is-visible .team-card:nth-child(14) { transition-delay: 0.7s; }
 @media (max-width: 699px) {
   .team-card { transition-delay: 0s !important; }
 }
