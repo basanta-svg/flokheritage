@@ -271,10 +271,14 @@
   var teamGrid = document.querySelector('.team-grid');
   if (teamGrid) {
     var teamReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var teamCards = teamGrid.querySelectorAll('.team-card');
 
     if (teamReduceMotion || !('IntersectionObserver' in window)) {
       teamGrid.classList.add('is-visible');
     } else {
+      teamCards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 0.05) + 's';
+      });
       var teamObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
