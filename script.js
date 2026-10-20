@@ -271,10 +271,14 @@
   var teamGrid = document.querySelector('.team-grid');
   if (teamGrid) {
     var teamReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var teamCards = teamGrid.querySelectorAll('.team-card');
 
     if (teamReduceMotion || !('IntersectionObserver' in window)) {
       teamGrid.classList.add('is-visible');
     } else {
+      teamCards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 0.05) + 's';
+      });
       var teamObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -284,6 +288,112 @@
         });
       }, { threshold: 0.15 });
       teamObserver.observe(teamGrid);
+    }
+  }
+
+  /* ---------- Explore the Collection: render + reveal ---------- */
+  var exploreGrid = document.getElementById('exploreGrid');
+  if (exploreGrid) {
+    var artworks = [
+      { title: 'Ceremonial Hat of His Majesty Jigme Dorji Wangchuck', image: 'assets/image/opening%20ceremony%20with%20her%20royal%20higues.jpg', link: 'treasures.html' },
+      { title: 'Carved Rabsel Window', image: 'assets/image/DSC08031.JPG', link: 'treasures.html' },
+      { title: 'Six Symbols of Longevity', image: 'assets/image/stall%20thangkha.jpg', link: 'treasures.html' },
+      { title: 'Palang / Jandom / Ara-rou', image: 'assets/image/craftmans%20stall.jpg', link: 'treasures.html' }
+    ];
+
+    artworks.forEach(function (art) {
+      var card = document.createElement('a');
+      card.className = 'explore-card';
+      card.href = art.link;
+
+      var figure = document.createElement('figure');
+      figure.className = 'explore-card-figure';
+
+      var img = document.createElement('img');
+      img.src = art.image;
+      img.alt = art.title;
+      img.loading = 'lazy';
+      figure.appendChild(img);
+
+      var overlay = document.createElement('div');
+      overlay.className = 'explore-card-overlay';
+      overlay.setAttribute('aria-hidden', 'true');
+      figure.appendChild(overlay);
+
+      var frame = document.createElement('div');
+      frame.className = 'explore-card-frame';
+      frame.setAttribute('aria-hidden', 'true');
+      figure.appendChild(frame);
+
+      var caption = document.createElement('figcaption');
+      caption.className = 'explore-card-caption';
+      caption.textContent = art.title;
+      figure.appendChild(caption);
+
+      card.appendChild(figure);
+      exploreGrid.appendChild(card);
+    });
+
+    var exploreCards = exploreGrid.querySelectorAll('.explore-card');
+
+    // Touch devices: first tap reveals the overlay, second tap follows the link.
+    if (window.matchMedia('(hover: none)').matches) {
+      exploreCards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          if (!card.classList.contains('is-touch-active')) {
+            e.preventDefault();
+            exploreCards.forEach(function (other) {
+              if (other !== card) other.classList.remove('is-touch-active');
+            });
+            card.classList.add('is-touch-active');
+          }
+        });
+      });
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.explore-card')) {
+          exploreCards.forEach(function (card) { card.classList.remove('is-touch-active'); });
+        }
+      });
+    }
+
+    var exploreSection = document.getElementById('explore-collection');
+    var exploreReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (exploreReduceMotion || !('IntersectionObserver' in window)) {
+      exploreSection.classList.add('is-visible');
+    } else {
+      exploreCards.forEach(function (card, i) {
+        card.style.transitionDelay = (i * 0.15) + 's';
+      });
+      var exploreObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            exploreSection.classList.add('is-visible');
+            exploreObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      exploreObserver.observe(exploreSection);
+    }
+  }
+
+  /* ---------- Treasures: per-card reveal ---------- */
+  var treasureBoxes = document.querySelectorAll('.treasure-box');
+  if (treasureBoxes.length) {
+    var treasureReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (treasureReduceMotion || !('IntersectionObserver' in window)) {
+      treasureBoxes.forEach(function (box) { box.classList.add('is-revealed'); });
+    } else {
+      var treasureObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            treasureObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      treasureBoxes.forEach(function (box) { treasureObserver.observe(box); });
     }
   }
 
