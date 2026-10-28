@@ -148,6 +148,15 @@
     yearsSinceEl.setAttribute('data-count-to', yearsElapsed);
   }
 
+  /* Total Visitors is always the sum of the visitor figures above it */
+  var sumEls = document.querySelectorAll('.stat-value[data-sum]');
+  [].forEach.call(sumEls, function (sumEl) {
+    var groupEls = document.querySelectorAll('.stat-value[data-group="' + sumEl.getAttribute('data-sum') + '"]');
+    var total = 0;
+    [].forEach.call(groupEls, function (el) { total += parseInt(el.getAttribute('data-count-to'), 10) || 0; });
+    sumEl.setAttribute('data-count-to', total);
+  });
+
   var statValues = document.querySelectorAll('.stat-value[data-count-to]');
   if (statValues.length) {
     var statsReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -247,7 +256,7 @@
   }
 
   /* ---------- Advisory Committee: organogram reveal ---------- */
-  var orgChart = document.querySelector('.org-chart');
+  var orgChart = document.querySelector('.org-chart:not([data-tiered])');
   if (orgChart) {
     var orgReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -264,6 +273,49 @@
         });
       }, { threshold: 0.25 });
       orgObserver.observe(orgChart);
+    }
+  }
+
+  /* ---------- Our Team: tiered organogram, each tier reveals on its own ---------- */
+  var orgTiers = document.querySelectorAll('.org-chart[data-tiered] .org-tier');
+  if (orgTiers.length) {
+    var tierReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (tierReduceMotion || !('IntersectionObserver' in window)) {
+      orgTiers.forEach(function (t) { t.classList.add('is-visible'); });
+    } else {
+      var tierObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            tierObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      orgTiers.forEach(function (t) { tierObserver.observe(t); });
+    }
+  }
+
+  /* ---------- Architecture: construction drawing rises from the ground ---------- */
+  var buildFigure = document.querySelector('.build-figure');
+  if (buildFigure) {
+    /* The hidden starting state (.build-anim) is added by an inline script in the markup
+       so it exists from the first paint; here we only trigger it, or drop it if
+       animation is not wanted. */
+    if (!('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      buildFigure.classList.remove('build-anim');
+    } else {
+      buildFigure.classList.add('build-anim');
+      var buildObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            buildFigure.classList.add('is-visible');
+            buildObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      buildObserver.observe(buildFigure);
     }
   }
 
@@ -291,14 +343,14 @@
     }
   }
 
-  /* ---------- Explore the Collection: render + reveal ---------- */
+  /* ---------- Explore the Treasures: render + reveal ---------- */
   var exploreGrid = document.getElementById('exploreGrid');
   if (exploreGrid) {
     var artworks = [
-      { title: 'Ceremonial Hat of His Majesty Jigme Dorji Wangchuck', image: 'assets/image/opening%20ceremony%20with%20her%20royal%20higues.jpg', link: 'treasures.html' },
-      { title: 'Carved Rabsel Window', image: 'assets/image/DSC08031.JPG', link: 'treasures.html' },
-      { title: 'Six Symbols of Longevity', image: 'assets/image/stall%20thangkha.jpg', link: 'treasures.html' },
-      { title: 'Palang / Jandom / Ara-rou', image: 'assets/image/craftmans%20stall.jpg', link: 'treasures.html' }
+      { title: 'Ceremonial Hat of His Majesty Jigme Dorji Wangchuck', image: 'assets/image/treasures/web/3rd-king-s-hat.jpg', link: 'treasures.html#ceremonial-hat' },
+      { title: 'Six Symbols of Longevity', image: 'assets/image/treasures/web/tshering-drukor.jpg', link: 'treasures.html#six-symbols' },
+      { title: 'Traditional Weighing Scales', image: 'assets/image/treasures/web/weighing-scal-small.jpg', link: 'treasures.html#weighing-scales' },
+      { title: 'Palang / Jandom / Ara-rou', image: 'assets/image/treasures/web/c3.jpg', link: 'treasures.html#palang-jandom-ara-rou' }
     ];
 
     artworks.forEach(function (art) {

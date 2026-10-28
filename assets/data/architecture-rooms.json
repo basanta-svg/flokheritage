@@ -1,0 +1,74 @@
+{
+  "_readme": "Edit this file to change the text in the room panels on the Architecture page. Each key matches a data-room value in assets/svg/*.svg. 'photo' is optional: put an image path (e.g. assets/image/grains-store.jpg) and an 'photoAlt'. 'tab' optionally links to a drawing tab (elevation, section, first-floor, second-floor); 'focus' is the room to highlight there. All description text below is placeholder copy.",
+  "rooms": {
+    "grains-store": {
+      "name": "Grains Store",
+      "floor": "First floor",
+      "dimensions": "5,22 m × 5,09 m",
+      "description": "Placeholder text. A short description of how the grains store was used by the household will go here.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    "household-store": {
+      "name": "Store for Household Items",
+      "floor": "First floor",
+      "dimensions": "10,96 m × 2,73 m",
+      "description": "Placeholder text. A short description of the household store and the objects once kept here will go here.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    "kitchen": {
+      "name": "Kitchen",
+      "floor": "Second floor",
+      "dimensions": "5,22 m × 5,57 m",
+      "description": "Placeholder text. A short description of the kitchen and its hearth will go here.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    "living-room": {
+      "name": "Living Room",
+      "floor": "Second floor",
+      "dimensions": "7,67 m × 3,93 m",
+      "description": "Placeholder text. A short description of the living room and daily family life will go here.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    "altar-room": {
+      "name": "Altar Room",
+      "floor": "Second floor",
+      "dimensions": "5,06 m wide",
+      "description": "Placeholder text. A short description of the altar room and the household's religious practice will go here.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    "level-kitchen": {
+      "name": "Kitchen level",
+      "floor": "Section, upper level",
+      "dimensions": "Height 3,32 m",
+      "description": "Placeholder text. The uppermost living level of the house, shown in section.",
+      "photo": "",
+      "photoAlt": "",
+      "tab": "second-floor",
+      "focus": "kitchen",
+      "tabLabel": "Second Floor"
+    },
+    "level-store-room": {
+      "name": "Store room level",
+      "floor": "Section, middle level",
+      "dimensions": "Height 2,56 m",
+      "description": "Placeholder text. The middle level of the house, used for storage, shown in section.",
+      "photo": "",
+      "photoAlt": "",
+      "tab": "first-floor",
+      "tabLabel": "First Floor"
+    },
+    "level-house-stable": {
+      "name": "House stable level",
+      "floor": "Section, ground level",
+      "dimensions": "Height 2,62 m",
+      "description": "Placeholder text. The ground level of the house, where animals were kept, shown in section.",
+      "photo": "",
+      "photoAlt": ""
+    }
+  }
+}
