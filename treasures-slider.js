@@ -64,7 +64,7 @@
   });
 
   /* ---------- Lightbox ---------- */
-  var boxes = document.querySelectorAll('.treasure-box');
+  var boxes = document.querySelectorAll('.treasure-box, .gallery-box');
   if (!boxes.length) return;
 
   var lb = document.createElement('div');
@@ -106,7 +106,7 @@
   function openLightbox(box, index, trigger) {
     group = [].slice.call(box.querySelectorAll('.modal-media img'));
     var titleEl = box.querySelector('.modal-title');
-    gTitle = titleEl ? titleEl.textContent : '';
+    gTitle = titleEl ? titleEl.textContent : (box.getAttribute('data-title') || '');
     lastFocus = trigger || document.activeElement;
     clearTimeout(hideTimer);
     show(index);
