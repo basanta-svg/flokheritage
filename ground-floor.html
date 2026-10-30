@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ground Floor — Inside the Manor — Folk Heritage</title>
 <meta name="description" content="The ground floor of the Folk Heritage manor, a storehouse and stable with tack, a room for cows and Buchung-go ray, a dedicated space for calves, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=41">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -88,21 +88,22 @@
     <h1 class="h-display">Ground Floor</h1>
   </header>
 
-  <!-- Full bleed -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/Ground-Floor-1.jpg" alt="Ground floor of the Folk Heritage manor" loading="lazy" style="width:100%; height: 100vh; height: 100svh; object-fit: cover;">
-  </figure>
+  <!-- Hero image, framed like the Middle Floor page -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/Ground-Floor-1.jpg" alt="Ground floor of the Folk Heritage manor" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Intro -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div>
+    <div class="wrap intro-split">
+      <div class="intro-split-head">
         <p class="eyebrow">See Medieval Bhutan</p>
         <h2 class="h-lg">Built for the animals first.</h2>
       </div>
-      <div>
-        <p class="lede mt-0">Stroll through the three-room ground floor, a bustling storehouse and shelter for domestic animals in the past. Its rammed-earth walls and low, stone-flagged rooms once kept grain, tools and livestock safe through Thimphu's winters.</p>
-        <p style="margin-top: 20px; color: var(--charcoal-70); max-width: 50ch;">Three rooms pulse with the rhythms of rural life: a store of saddles, ropes and tack for the beasts of burden, a room for pregnant and milking cows, and Buchung-go ray, a dedicated space for calves.</p>
+      <div class="intro-split-body intro-split-single">
+        <p class="lede">The ground floor has three rooms. The front room stores equipment such as leather bags, cane and bamboo items, saddles, stirrups, and other animal-related items, especially for beasts of burden. The main room was reserved for pregnant and milking cows, as well as sick animals. Adjacent to it is the calves’ room (buchung-go ray), where calves are kept separately from their mothers at night so that they do not suckle all the milk.</p>
       </div>
     </div>
   </section>
@@ -110,30 +111,48 @@
   <hr class="hairline wrap">
 
   <!-- What's here -->
-  <section class="section">
+  <section class="section section-tight floor-features">
     <div class="wrap">
       <p class="eyebrow">What's Here</p>
-      <h2 class="h-xl" style="margin-bottom: 32px;">Three rooms, one working floor.</h2>
-      <ul class="objectives-list" style="display: grid; gap: 12px; max-width: 60ch;">
-        <li style="color: var(--charcoal-70);">A tack store of saddles, ropes and other gear for the household's beasts of burden</li>
-        <li style="color: var(--charcoal-70);">A room set aside for pregnant and milking cows</li>
-        <li style="color: var(--charcoal-70);">Buchung-go ray, a dedicated space for calves, kept apart from the herd</li>
-      </ul>
+      <h2 class="h-lg">Three rooms, one working floor.</h2>
+      <div class="grid grid-3 floor-feature-grid floor-feature-grid-3">
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14c2-5 6-6 8-6s6 1 8 6M4 14h16M7 14v5M17 14v5"/></svg></span>
+          <h3 class="h-md">Tack store</h3>
+          <p class="card-desc" style="margin-top: 12px;">Saddles, ropes and other gear for the household's beasts of burden.</p>
+        </div>
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V5h14v16M9 21v-6h6v6"/></svg></span>
+          <h3 class="h-md">Room for cows</h3>
+          <p class="card-desc" style="margin-top: 12px;">A room set aside for pregnant and milking cows.</p>
+        </div>
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+          <h3 class="h-md">Buchung-go ray</h3>
+          <p class="card-desc" style="margin-top: 12px;">A dedicated space for calves, kept apart from the herd.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <hr class="hairline wrap">
 
-  <!-- Detail image -->
+  <!-- Ground floor gallery -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div class="frame-img">
-        <img src="assets/image/DSC_0062.JPG" alt="Ground floor courtyard with stone walls, Folk Heritage building" loading="lazy">
-      </div>
-      <div>
-        <p class="eyebrow">Rammed Earth &amp; Stone</p>
-        <h2 class="h-lg">A floor built to endure.</h2>
-        <p style="margin-top: 20px; color: var(--charcoal-70);">The ground floor's thick rammed-earth walls and stone-flagged rooms were built to withstand the weight of stored grain and the wear of livestock, the same construction that has kept the house standing on its original foundations for more than two centuries.</p>
+    <div class="wrap">
+      <div class="gallery-box" data-title="The Ground Floor">
+        <div class="modal-media treasure-slider gallery-slider" role="region" aria-roledescription="carousel" aria-label="Photos of the ground floor of the manor">
+          <ul class="slider-track" tabindex="0">
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4"><img src="assets/image/DSC_0062.JPG" alt="Ground floor courtyard with stone walls, Folk Heritage building" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4"><img src="assets/image/Entrance.jpg" alt="Stone-paved courtyard at the entrance of the Folk Heritage manor" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4"><img src="assets/image/architecture.jpeg" alt="Traditional rammed-earth and timber architecture of the Folk Heritage building" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4"><img src="assets/image/DSC_0066.JPG" alt="Tiered wooden roof and rammed-earth tower of the Folk Heritage building" loading="lazy"></li>
+          </ul>
+          <button type="button" class="slider-btn slider-prev" aria-label="Previous photo"><span aria-hidden="true">&lsaquo;</span></button>
+          <button type="button" class="slider-btn slider-next" aria-label="Next photo"><span aria-hidden="true">&rsaquo;</span></button>
+          <p class="slider-count" aria-live="polite">1 / 4</p>
+          <div class="slider-dots"><button type="button" class="slider-dot" aria-label="Show photo 1"></button><button type="button" class="slider-dot" aria-label="Show photo 2"></button><button type="button" class="slider-dot" aria-label="Show photo 3"></button><button type="button" class="slider-dot" aria-label="Show photo 4"></button></div>
+        </div>
       </div>
     </div>
   </section>
@@ -159,7 +178,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -203,6 +221,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
+<script src="treasures-slider.js?v=3" defer></script>
 </body>
 </html>

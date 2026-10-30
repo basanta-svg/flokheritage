@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entrance — Inside the Manor — Folk Heritage</title>
 <meta name="description" content="The entrance of the Folk Heritage manor, a hearth of daily incense, a water-propelled stone mill, a water-driven prayer wheel and the Fortress of the Subterranean Beings, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=42">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -89,21 +89,22 @@
     <p class="lede" style="margin-top: 24px;">First impressions, the stone-paved courtyard and timber facade that set the tone for everything inside.</p>
   </header>
 
-  <!-- Full bleed -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/Entrance.jpg" alt="Entrance of the Folk Heritage manor" loading="lazy" style="width:100%; height: 100vh; height: 100svh; object-fit: cover;">
-  </figure>
+  <!-- Hero image, framed like the Middle Floor page -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/Entrance.jpg" alt="Entrance of the Folk Heritage manor" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Intro -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div>
-        <p class="eyebrow">Step Inside</p>
-        <h2 class="h-lg">A cultural enigma.</h2>
+    <div class="wrap intro-split">
+      <div class="intro-split-head">
+        <h2 class="h-lg">Courtyard &ndash; gaegho</h2>
       </div>
-      <div>
-        <p class="lede mt-0">Showcasing the timeless skills of Bhutan's rural artisans, step into a realm where tradition and craftsmanship are revered and preserved. The stone-paved courtyard and timber facade set the tone for what lies inside, a working farmhouse turned living museum, restored rather than reconstructed.</p>
-        <p style="margin-top: 20px; max-width: 50ch;">The courtyard serves as the threshold to the Museum’s story, giving visitors a first glimpse of everyday village life. From here, the traditional house, its surroundings, and familiar rural Bhutanese features form a single setting. Within it, architecture, craft, and living traditions, such as brewing local wine, roasting rice, and weaving traditional cloth, can be experienced together. Inside, the Museum invites you to look beyond the objects to the knowledge, skills, practices, and stories that have shaped Bhutan’s folk heritage.</p>
+      <div class="intro-split-body">
+        <p class="lede">In most traditional Bhutanese houses, one would find an enclosed courtyard. All the domestic animals, such as cows, horses, and chickens, are kept in the courtyard at night to protect them from wild animals. Many other activities, such as roasting rice (zaw), brewing local drinks (Ara), grinding and dehusking grams, and weaving cloth, were also done in the courtyard.</p>
+        <p class="lede">Also, farming equipment such as a plough, a yoke, an ox-drawn wooden leveller, thrashers (korbji), and rolled bamboo mats for drying grains and vegetables is kept in the courtyard. Here, visitors should not miss discovering two kinds of ploughshare, one made of wood and the other made of iron. The iron ploughshare is a reminder of the advent of iron mining and smelting, which started in the 14th century, after the great saint Thangthong Gyelpo (1361 AD–1475 AD), the master iron chain bridge builder, introduced the process of iron mining and smelting to Bhutan.</p>
       </div>
     </div>
   </section>
@@ -150,7 +151,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -194,7 +194,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 <script src="treasures-slider.js?v=3" defer></script>
 </body>
 </html>

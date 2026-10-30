@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inside the Manor — Folk Heritage</title>
 <meta name="description" content="A room-by-room walk through the Folk Heritage manor, Entrance, Ground Floor, Middle Floor and Top Floor, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=40">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -88,10 +88,12 @@
     <p class="lede" style="margin-top: 24px;">Four floors, each preserved as it was lived in, from the entrance courtyard to the family altar under the roof.</p>
   </header>
 
-  <!-- Full bleed -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/DSC07975.JPG" alt="Wooden upper storey and rammed-earth tower of the Folk Heritage building, seen through pine trees" loading="lazy" style="width:100%; height: 100vh; height: 100svh; object-fit: cover;">
-  </figure>
+  <!-- Hero image, framed like the Middle Floor page -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/DSC07975.JPG" alt="Wooden upper storey and rammed-earth tower of the Folk Heritage building, seen through pine trees" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Inside the Manor: museum floor guide -->
   <section class="section manor-guide-section" id="manor-guide">
@@ -176,14 +178,6 @@
 
   <hr class="hairline wrap">
 
-  <!-- Pull quote -->
-  <section class="section text-center">
-    <div class="wrap">
-      <p class="pull-quote" style="max-width: 26ch; margin: 0 auto;">"Every floor had a purpose, nothing in this house was built for show."</p>
-      <p class="pull-quote-attr">Restoration Architect</p>
-    </div>
-  </section>
-
   <section class="section text-center">
     <div class="wrap">
       <h2 class="h-lg">See it for yourself.</h2>
@@ -200,7 +194,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -244,6 +237,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

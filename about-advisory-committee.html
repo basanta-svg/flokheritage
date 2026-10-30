@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advisory Committee — Folk Heritage</title>
 <meta name="description" content="The Advisory Committee of the Folk Heritage Museum, strategic guidance on heritage preservation, financial sustainability and resource mobilization, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=29">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html" aria-current="page">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -84,8 +84,7 @@
 <main id="main">
 
   <header class="page-header wrap">
-    <h1 class="h-display">About</h1>
-    <p class="lede" style="margin-top: 24px;">Phelchey Toenkhyim, a living record of Bhutan's rural past, founded in 2001 under the patronage of Her Majesty the Queen Mother.</p>
+    <h1 class="h-display">Advisory Committee</h1>
   </header>
 
   <!-- Advisory Committee -->
@@ -94,66 +93,88 @@
       <p class="eyebrow" style="display: block; text-align: center;">Governance</p>
       <h2 class="h-xl" style="text-align: center;">Advisory Committee</h2>
       <p class="lede" style="margin: 16px auto 0; max-width: 90ch; text-align: center;">The Advisory Committee provides strategic advice and guidance in executing the Board's decisions, advising management on heritage preservation programs and financial sustainability, helping develop resource mobilization strategies, and contributing feedback on the museum's programs and initiatives.</p>
-      <div class="org-chart">
-        <div class="org-node org-node-chair">
-          <div class="org-avatar org-avatar-chair" aria-hidden="true">KT</div>
-          <p class="org-card-name">Mr. Kunzang Thinley</p>
-          <span class="org-badge">Chairman</span>
-          <p class="org-card-org">Former Principal, Royal Academy for Performing Arts</p>
+      <div class="org-chart org-chart-cards" data-tiered>
+        <div class="org-tier org-tier-top">
+        <div class="org-branch org-branch-top">
+          <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">KT</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Mr. Kunzang Thinley</h3>
+                <p class="team-role">Chairman</p>
+                <p class="team-org">Former Principal, Royal Academy for Performing Arts</p>
+              </div>
+            </div>
+        </div>
         </div>
 
-        <div class="org-connector-trunk" aria-hidden="true"><span class="org-dot"></span></div>
+        <div class="org-tier" style="--n:3">
+        <div class="org-connector-trunk" aria-hidden="true"></div>
         <div class="org-connector-bar" aria-hidden="true"></div>
 
         <div class="org-row">
           <div class="org-branch">
-            <div class="org-connector-stem" aria-hidden="true"><span class="org-dot org-dot-sm"></span></div>
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">SS</div>
-              <p class="org-card-name">Mr. Singye Samdrup</p>
-              <p class="org-card-org">Specialist, National Library and Archive</p>
+            <div class="org-connector-stem" aria-hidden="true"></div>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">SS</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Mr. Singye Samdrup</h3>
+                <p class="team-role">Specialist, National Library and Archive</p>
+              </div>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-connector-stem" aria-hidden="true"><span class="org-dot org-dot-sm"></span></div>
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">YS</div>
-              <p class="org-card-name">Mr. Yeshi Samdrup</p>
-              <p class="org-card-org">Chief Architect, Department of Culture and Dzongkha Development</p>
+            <div class="org-connector-stem" aria-hidden="true"></div>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">YS</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Mr. Yeshi Samdrup</h3>
+                <p class="team-role">Chief Architect, Department of Culture and Dzongkha Development</p>
+              </div>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-connector-stem" aria-hidden="true"><span class="org-dot org-dot-sm"></span></div>
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">TT</div>
-              <p class="org-card-name">Mr. Tshering Tashi</p>
-              <p class="org-card-org">Proprietor, Jojo's Adventure &amp; Founding Member, Tarayana Dragons Club</p>
+            <div class="org-connector-stem" aria-hidden="true"></div>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">TT</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Mr. Tshering Tashi</h3>
+                <p class="team-role">Proprietor, Jojo's Adventure &amp; Founding Member, Tarayana Dragons Club</p>
+              </div>
             </div>
           </div>
         </div>
+        </div>
 
+        <div class="org-tier org-tier-more" style="--n:3">
         <div class="org-row">
           <div class="org-branch">
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">KT</div>
-              <p class="org-card-name">Mr. Kinley Tshering</p>
-              <p class="org-card-org">Associate Lecturer, Royal College of Thimphu</p>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">KT</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Mr. Kinley Tshering</h3>
+                <p class="team-role">Associate Lecturer, Royal College of Thimphu</p>
+              </div>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">TP</div>
-              <p class="org-card-name">Ms. Tshewang Palden</p>
-              <p class="org-card-org">Principal, National Institute of Zorig Chusum, Thimphu</p>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">TP</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Ms. Tshewang Palden</h3>
+                <p class="team-role">Principal, National Institute of Zorig Chusum, Thimphu</p>
+              </div>
             </div>
           </div>
           <div class="org-branch">
-            <div class="org-node">
-              <div class="org-avatar" aria-hidden="true">SP</div>
-              <p class="org-card-name">Ms. Sonam Pem</p>
-              <p class="org-card-org">Executive Director, Tarayana Foundation</p>
+            <div class="team-card">
+              <div class="team-avatar" aria-hidden="true">SP</div>
+              <div class="team-card-body">
+                <h3 class="team-name">Ms. Sonam Pem</h3>
+                <p class="team-role">Executive Director, Tarayana Foundation</p>
+              </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -175,7 +196,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -219,6 +239,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

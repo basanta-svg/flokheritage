@@ -125,7 +125,7 @@
       guests: function (v) { return v && Number(v) > 0 ? '' : 'Please enter a party size.'; },
       message: function () { return ''; }
     },
-    'Thank you — your inquiry has been received. We will confirm your reservation by email shortly.'
+    'Thank you — your inquiry has been received. We will confirm your visit by email shortly.'
   );
 
   initFormValidation(
@@ -276,7 +276,7 @@
     }
   }
 
-  /* ---------- Our Team: tiered organogram, each tier reveals on its own ---------- */
+  /* ---------- Our Team / Advisory Committee: profiles come up one after another ---------- */
   var orgTiers = document.querySelectorAll('.org-chart[data-tiered] .org-tier');
   if (orgTiers.length) {
     var tierReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -284,13 +284,25 @@
     if (tierReduceMotion || !('IntersectionObserver' in window)) {
       orgTiers.forEach(function (t) { t.classList.add('is-visible'); });
     } else {
-      var tierObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            tierObserver.unobserve(entry.target);
-          }
+      /* inside a tier the cards follow each other; between tiers each waits for the one before */
+      orgTiers.forEach(function (tier) {
+        [].forEach.call(tier.querySelectorAll('.org-branch'), function (branch, i) {
+          branch.style.setProperty('--d', (0.4 + i * 0.16).toFixed(2) + 's');
         });
+      });
+      var nextTierAt = 0;
+      var tierObserver = new IntersectionObserver(function (entries) {
+        entries
+          .filter(function (e) { return e.isIntersecting; })
+          .sort(function (x, y) { return x.target.compareDocumentPosition(y.target) & 4 ? -1 : 1; })
+          .forEach(function (entry) {
+            var tier = entry.target;
+            var now = performance.now();
+            var start = Math.max(now, nextTierAt);
+            setTimeout(function () { tier.classList.add('is-visible'); }, start - now);
+            nextTierAt = start + tier.querySelectorAll('.org-branch').length * 160 + 500;
+            tierObserver.unobserve(tier);
+          });
       }, { threshold: 0.2 });
       orgTiers.forEach(function (t) { tierObserver.observe(t); });
     }
@@ -317,6 +329,37 @@
       }, { threshold: 0.35 });
       buildObserver.observe(buildFigure);
     }
+  }
+
+  /* ---------- Homepage: What's On card slider ---------- */
+  var newsTrack = document.querySelector('.news-track');
+  if (newsTrack) {
+    var newsPrev = document.querySelector('.news-prev');
+    var newsNext = document.querySelector('.news-next');
+    var newsReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var newsStep = function () {
+      var card = newsTrack.querySelector('.card');
+      return card ? card.getBoundingClientRect().width + 24 : newsTrack.clientWidth;
+    };
+    var newsUpdate = function () {
+      var max = newsTrack.scrollWidth - newsTrack.clientWidth - 2;
+      newsPrev.disabled = newsTrack.scrollLeft <= 2;
+      newsNext.disabled = newsTrack.scrollLeft >= max;
+    };
+    newsPrev.addEventListener('click', function () {
+      newsTrack.scrollBy({ left: -newsStep(), behavior: newsReduce ? 'auto' : 'smooth' });
+    });
+    newsNext.addEventListener('click', function () {
+      newsTrack.scrollBy({ left: newsStep(), behavior: newsReduce ? 'auto' : 'smooth' });
+    });
+    newsTrack.addEventListener('scroll', newsUpdate, { passive: true });
+    newsTrack.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); newsNext.click(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); newsPrev.click(); }
+    });
+    window.addEventListener('resize', newsUpdate);
+    newsUpdate();
   }
 
   /* ---------- Team grid: reveal ---------- */

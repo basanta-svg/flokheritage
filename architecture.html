@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Architecture — Folk Heritage</title>
 <meta name="description" content="Inside an 18th-century rammed mud and timber farmhouse, the shingle roofs, trefoil windows and materials of traditional Bhutanese architecture, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=40">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html" aria-current="page">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -88,41 +88,59 @@
     <p class="lede" style="margin-top: 24px;">A restored 18th-century farmhouse in Kawajangsa, the walls, timber and roofline are the oldest object in the collection.</p>
   </header>
 
-  <!-- Full bleed 1 -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/DSC07975.JPG" alt="Wooden upper storey and rammed-earth tower of the Folk Heritage building, seen through pine trees" loading="lazy" style="width:100%; height: 100vh; height: 100svh; object-fit: cover;">
-  </figure>
+  <!-- Framed image 1 -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/DSC07975.JPG" alt="Wooden upper storey and rammed-earth tower of the Folk Heritage building, seen through pine trees" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Text block 1 -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div>
+    <div class="wrap intro-split">
+      <div class="intro-split-head">
         <p class="eyebrow">Origins, Mid-18th Century</p>
         <h2 class="h-lg">The Manor of Wang Valley.</h2>
       </div>
-      <div>
-        <p class="lede mt-0">The heart of the Museum is a restored three-storeyed traditional rammed-earth and timber house, believed to date to the mid-18th century. Traditionally associated with the Kawang family of Wang Valley, the house reflects the architecture and status of a prominent household rather than an ordinary rural home.</p>
-        <p style="margin-top: 20px; color: var(--charcoal-70); max-width: 50ch;">The Kawang family was closely connected with the administration of Thimphu, including Kawang Mangkel, who served as Thimphu Dzongpon. The house reflects the social and administrative life of the period, when local officials played an important role in the governance of Thimphu and the surrounding areas, a place for receiving guests, managing agricultural resources, and conducting household and local affairs, standing on its original foundations more than two centuries on.</p>
+      <div class="intro-split-body">
+        <p class="lede">The heart of the Museum is a restored three-storeyed traditional rammed-earth and timber house, believed to date to the mid-18th century. Traditionally associated with the Kawang family of Wang Valley, the house reflects the architecture and status of a prominent household rather than an ordinary rural home.</p>
+        <p class="intro-split-p">The Kawang family was closely connected with the administration of Thimphu, including Kawang Mangkel, who served as Thimphu Dzongpon. The house reflects the social and administrative life of the period, when local officials played an important role in the governance of Thimphu and the surrounding areas, a place for receiving guests, managing agricultural resources, and conducting household and local affairs, standing on its original foundations more than two centuries on.</p>
       </div>
     </div>
   </section>
 
   <hr class="hairline wrap">
 
-  <!-- Climate & Craft: giant type moment -->
-  <section class="section overflow-hidden">
+  <!-- Climate & Craft -->
+  <section class="section">
     <div class="wrap">
-      <p class="eyebrow">Climate &amp; Craft</p>
-      <h2 class="giant-type outline">Timber</h2>
-      <h2 class="giant-type" style="margin-top: -0.05em;">Country</h2>
-      <p class="lede" style="margin-top: 40px; max-width: 80ch;">The main features of Bhutanese architecture are a result of natural conditions, and especially the climate. This alpine-type vegetation supports forests rich in oak, rhododendron, cypress, juniper, pine and fir, a plentiful supply of timber that has given birth to an architecture in which wood plays the leading role. Shingle roofs and half-timbering are common, simply because the raw material has always been close at hand.</p>
+      <h2 class="h-xl" style="margin-bottom: clamp(32px, 4vw, 56px);">Climate &amp; Craft</h2>
+      <div class="obj-grid obj-grid-3">
+        <article class="obj-card">
+          <span class="obj-num" aria-hidden="true">01</span>
+          <h3 class="h-md">Climate</h3>
+          <p class="card-desc">The main features of Bhutanese architecture are a result of natural conditions, and especially the climate.</p>
+        </article>
+        <article class="obj-card">
+          <span class="obj-num" aria-hidden="true">02</span>
+          <h3 class="h-md">Timber</h3>
+          <p class="card-desc">This alpine-type vegetation supports forests rich in oak, rhododendron, cypress, juniper, pine and fir, a plentiful supply of timber that has given birth to an architecture in which wood plays the leading role.</p>
+        </article>
+        <article class="obj-card">
+          <span class="obj-num" aria-hidden="true">03</span>
+          <h3 class="h-md">Craft</h3>
+          <p class="card-desc">Shingle roofs and half-timbering are common, simply because the raw material has always been close at hand.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- Full bleed 2 -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/DSC08031.JPG" alt="Carved timber balcony and shuttered windows on the upper storey" loading="lazy" style="width:100%; height: 78vh; object-fit: cover;">
-  </figure>
+  <!-- Framed image 2 -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/DSC08031.JPG" alt="Carved timber balcony and shuttered windows on the upper storey" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Materials -->
   <section class="section">
@@ -339,10 +357,12 @@
     </div>
   </section>
 
-  <!-- Full bleed 3 -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/architecture.jpeg" alt="Aerial view of the Folk Heritage manor and grounds" loading="lazy" style="width:100%; height: 90vh; object-fit: cover;">
-  </figure>
+  <!-- Framed image 3 -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/architecture.jpeg" alt="Aerial view of the Folk Heritage manor and grounds" loading="lazy">
+    </figure>
+  </div>
 
   <section class="section text-center">
     <div class="wrap">
@@ -360,7 +380,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -404,7 +423,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 <script src="architecture-house.js?v=1" defer></script>
 </body>
 </html>

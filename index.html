@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Folk Heritage — Restaurant &amp; Museum, Kawajangsa, Thimphu</title>
-<meta name="description" content="Folk Heritage is a restaurant and living museum in Kawajangsa, Thimphu, refined Bhutanese-inspired cuisine served among preserved textiles, woodwork and heritage architecture.">
-<link rel="icon" href="assets/image/logo.png">
+<title>Folk Heritage Museum — Kawajangsa, Thimphu</title>
+<meta name="description" content="Folk Heritage Museum (Phelchey Toenkhyim) is a living museum in Kawajangsa, Thimphu, set in a restored 19th-century Bhutanese farmhouse with preserved textiles, woodwork and heritage architecture.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Folk Heritage Museum — Kawajangsa, Thimphu">
+<meta property="og:description" content="Folk Heritage Museum (Phelchey Toenkhyim) is a living museum in Kawajangsa, Thimphu, set in a restored 19th-century Bhutanese farmhouse with preserved textiles, woodwork and heritage architecture.">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=39">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +28,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -36,7 +39,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -246,65 +249,68 @@
 
   <hr class="hairline wrap">
 
-  <!-- What's On teaser -->
+  <!-- What's On teaser: card slider -->
   <section class="section">
     <div class="wrap">
-      <div class="flex-between" style="margin-bottom: 56px;">
+      <div class="flex-between" style="margin-bottom: 56px; align-items: flex-end;">
         <div>
           <p class="eyebrow">News &amp; Announcements</p>
           <h2 class="h-xl">What's On</h2>
         </div>
-        <a class="btn-line" href="announcement.html">All announcements <span class="arrow">&rarr;</span></a>
+        <div class="news-controls">
+          <button type="button" class="news-btn news-prev" aria-label="Previous announcements"><span aria-hidden="true">&lsaquo;</span></button>
+          <button type="button" class="news-btn news-next" aria-label="Next announcements"><span aria-hidden="true">&rsaquo;</span></button>
+        </div>
       </div>
-      <div class="grid grid-3">
-        <article class="card card-overlay">
-          <div class="card-media">
-            <img src="assets/image/stall%20mask.jpg" alt="Traditional Bhutanese mask on display at the Folk Heritage craft stall" loading="lazy">
-            <span class="card-tag">Event</span>
-            <div class="card-overlay-content">
-              <p class="card-meta">12 September 2026</p>
-              <h3 class="card-title">Autumn Cham Evening</h3>
-              <div class="card-overlay-more">
-                <div class="card-overlay-more-inner">
-                  <p class="card-desc">A private masked-dance performance in the courtyard, followed by a seasonal tasting menu.</p>
-                  <a class="card-overlay-cta" href="announcement.html">View More <span class="arrow">&rarr;</span></a>
+      <div class="news-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="News and announcements">
+          <article class="card card-overlay">
+            <div class="card-media">
+              <img src="assets/image/stall%20mask.jpg" alt="Traditional Bhutanese mask on display at the Folk Heritage craft stall" loading="lazy">
+              <span class="card-tag">Event</span>
+              <div class="card-overlay-content">
+                <p class="card-meta">12 September 2026</p>
+                <h3 class="card-title">Autumn Cham Evening</h3>
+                <div class="card-overlay-more">
+                  <div class="card-overlay-more-inner">
+                    <p class="card-desc">A private masked-dance performance in the courtyard.</p>
+                    <a class="card-overlay-cta" href="announcement.html">View More <span class="arrow">&rarr;</span></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </article>
-        <article class="card card-overlay">
-          <div class="card-media">
-            <img src="assets/image/DSC_0062.JPG" alt="Heritage house at dusk with prayer flags" loading="lazy">
-            <span class="card-tag">Specials</span>
-            <div class="card-overlay-content">
-              <p class="card-meta">15 October 2026</p>
-              <h3 class="card-title">Ema Datshi, Reconsidered</h3>
-              <div class="card-overlay-more">
-                <div class="card-overlay-more-inner">
-                  <p class="card-desc">Our chef's autumn reading of the national dish, plated as a tasting course rather than a side.</p>
-                  <a class="card-overlay-cta" href="specials.html">View More <span class="arrow">&rarr;</span></a>
+          </article>
+          <article class="card card-overlay">
+            <div class="card-media">
+              <img src="assets/image/opening%20ceremony%20with%20her%20royal%20higues.jpg" alt="Opening ceremony at the Folk Heritage Craft Village, attended by royalty" loading="lazy">
+              <span class="card-tag">Collaboration</span>
+              <div class="card-overlay-content">
+                <p class="card-meta">2 August 2026</p>
+                <h3 class="card-title">A New Textile Acquisition</h3>
+                <div class="card-overlay-more">
+                  <div class="card-overlay-more-inner">
+                    <p class="card-desc">A new ceremonial kabney joins the permanent collection, on long-term loan from a family in Bumthang.</p>
+                    <a class="card-overlay-cta" href="treasures.html">View the Collection <span class="arrow">&rarr;</span></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </article>
-        <article class="card card-overlay">
-          <div class="card-media">
-            <img src="assets/image/textile%20stall.jpg" alt="Hand-woven textiles on display at the Folk Heritage textile stall" loading="lazy">
-            <span class="card-tag">Announcement</span>
-            <div class="card-overlay-content">
-              <p class="card-meta">1 October 2026</p>
-              <h3 class="card-title">Weaving Demonstration</h3>
-              <div class="card-overlay-more">
-                <div class="card-overlay-more-inner">
-                  <p class="card-desc">A visiting textile artisan from Lhuentse demonstrates backstrap-loom weaving in the collection room.</p>
-                  <a class="card-overlay-cta" href="announcement.html">View More <span class="arrow">&rarr;</span></a>
+          </article>
+          <article class="card card-overlay">
+            <div class="card-media">
+              <img src="assets/image/textile%20stall.jpg" alt="Hand-woven textiles on display at the Folk Heritage textile stall" loading="lazy">
+              <span class="card-tag">Announcement</span>
+              <div class="card-overlay-content">
+                <p class="card-meta">1 October 2026</p>
+                <h3 class="card-title">Weaving Demonstration</h3>
+                <div class="card-overlay-more">
+                  <div class="card-overlay-more-inner">
+                    <p class="card-desc">A visiting textile artisan from Lhuentse demonstrates backstrap-loom weaving in the collection room.</p>
+                    <a class="card-overlay-cta" href="announcement.html">View More <span class="arrow">&rarr;</span></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
       </div>
     </div>
   </section>
@@ -408,13 +414,6 @@
               <p class="visit-info-value">Foreigners &amp; Regional: Nu. 700<br>Bhutanese: Nu. 200<br>Students &amp; under 12: Free</p>
             </div>
           </div>
-          <div class="visit-info-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a5 5 0 0 0-5 5v3.5c0 .9-.4 1.7-1.1 2.3L4 15.5V17h16v-1.5l-1.9-1.7c-.7-.6-1.1-1.4-1.1-2.3V8a5 5 0 0 0-5-5z"/><path d="M9.5 20a2.5 2.5 0 0 0 5 0"/></svg>
-            <div>
-              <p class="visit-info-label">Reservations</p>
-              <p class="visit-info-value">Recommended for dinner service</p>
-            </div>
-          </div>
         </div>
 
         <a class="btn-line" href="contact.html" style="margin-top: 40px;">Full contact details <span class="arrow">&rarr;</span></a>
@@ -480,7 +479,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -524,6 +522,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Top Floor — Inside the Manor — Folk Heritage</title>
 <meta name="description" content="The top floor of the Folk Heritage manor, the thabtshang kitchen, the Baryap living area and the Choesham altar room, Kawajangsa, Thimphu.">
-<link rel="icon" href="assets/image/logo.png">
-<link rel="stylesheet" href="styles.css?v=40">
+<link rel="icon" type="image/png" href="assets/image/site%20icon.png">
+<link rel="stylesheet" href="styles.css?v=88">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +22,7 @@
       <a class="nav-link" href="specials.html">Specials</a>
       <a class="nav-link" href="treasures.html">Treasures</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="architecture.html" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true" aria-current="page">Architecture<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="architecture.html">Architecture</a>
@@ -33,7 +33,7 @@
       </div>
       <a class="nav-link" href="announcement.html">Announcement</a>
       <div class="nav-dropdown">
-        <a class="nav-link" href="about.html">About<span class="nav-caret" aria-hidden="true"></span></a>
+        <button type="button" class="nav-link nav-trigger" aria-haspopup="true">About<span class="nav-caret" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-menu-inner">
             <a href="about.html">About Us</a>
@@ -89,21 +89,24 @@
     <p class="lede" style="margin-top: 24px;">Kitchen, hearth and altar, the heart of the home, where the household gathered, ate and prayed together.</p>
   </header>
 
-  <!-- Full bleed -->
-  <figure class="overflow-hidden">
-    <img src="assets/image/Third-Floor.jpg" alt="Top floor kitchen and altar room of the Folk Heritage manor" loading="lazy" style="width:100%; height: 100vh; height: 100svh; object-fit: cover;">
-  </figure>
+  <!-- Hero image, framed like the Middle Floor page -->
+  <div class="wrap">
+    <figure class="floor-hero frame-img">
+      <img src="assets/image/Third-Floor.jpg" alt="Top floor kitchen and altar room of the Folk Heritage manor" loading="lazy">
+    </figure>
+  </div>
 
   <!-- Intro -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div>
-        <p class="eyebrow">The Family Floor</p>
-        <h2 class="h-lg">Where the household lived.</h2>
+    <div class="wrap intro-split">
+      <div class="intro-split-head">
+        <h2 class="h-lg">Kitchen &ndash; Thabtshang</h2>
       </div>
-      <div>
-        <p class="lede mt-0">The top floor, with its three rooms, was the heart of the home, a lively hub with the family kitchen, a welcoming living room, and a revered altar. Lit by trefoil windows and warmed by the hearth, it was where the household gathered, ate and prayed together.</p>
-        <p style="margin-top: 20px; color: var(--charcoal-70); max-width: 50ch;">The thabtshang kitchen, the Baryap living area hung with swords and scarves, and the Choesham altar room, the spiritual heart of the household, home to the Drum, Cymbals, Bell and Conch Shell.</p>
+      <div class="intro-split-body">
+        <p class="lede">The kitchen (Thabtshang) forms the core of household activities. With the only hearth inside the house, the kitchen is the warmest room. Apart from cooking, the family uses it for eating, entertaining, and sleeping, especially during cold nights.</p>
+        <p class="lede">There are three main rooms on this floor. The first is the kitchen, where the core household activities take place. It is usually located on the second floor, planned so that it is close to the living and shrine rooms, which makes it convenient for serving meals to guests and monks during ritual ceremonies. Apart from cooking, it is also used as the dining room.</p>
+        <p class="lede">The next room is the main living area, known as the baryap. The family uses this well-ventilated room for eating, sleeping, entertaining guests, weaving, and storing bedding, clothes, and other household items. The grandparents occupy a prominent seat in this room, usually near a window. They recite prayers, read religious texts, relax, and give instructions and advice to the family members.</p>
+        <p class="lede">The final room is the altar room, known as the choesham. The choesham forms the spiritual core of the home. Family members perform their daily worship here. This room is treated with respect because it is associated with sacred objects and images. Annual religious ceremonies are also performed here by the monks. The choesham can serve as a guest room for monks and special overnight guests. It should always be kept clean, as it is the sacred room where religious artifacts and images are enshrined and ritual prayers are conducted.</p>
       </div>
     </div>
   </section>
@@ -111,30 +114,48 @@
   <hr class="hairline wrap">
 
   <!-- What's here -->
-  <section class="section">
+  <section class="section section-tight floor-features">
     <div class="wrap">
       <p class="eyebrow">What's Here</p>
-      <h2 class="h-xl" style="margin-bottom: 32px;">Three rooms, the family's daily life.</h2>
-      <ul class="objectives-list" style="display: grid; gap: 12px; max-width: 60ch;">
-        <li style="color: var(--charcoal-70);">The thabtshang kitchen, warmed by the household hearth</li>
-        <li style="color: var(--charcoal-70);">The Baryap living area, hung with swords and ceremonial scarves</li>
-        <li style="color: var(--charcoal-70);">The Choesham altar room, home to the Drum, Cymbals, Bell and Conch Shell</li>
-      </ul>
+      <h2 class="h-lg">Three rooms, the family's daily life.</h2>
+      <div class="grid grid-3 floor-feature-grid floor-feature-grid-3">
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4"/></svg></span>
+          <h3 class="h-md">The thabtshang kitchen</h3>
+          <p class="card-desc" style="margin-top: 12px;">Warmed by the household hearth.</p>
+        </div>
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M3 12h18v5H3zM6 17v2M18 17v2"/></svg></span>
+          <h3 class="h-md">The Baryap living area</h3>
+          <p class="card-desc" style="margin-top: 12px;">Hung with swords and ceremonial scarves.</p>
+        </div>
+        <div class="panel-card">
+          <span class="panel-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v4M8 7h8M6 21h12M8 21V11h8v10"/></svg></span>
+          <h3 class="h-md">The Choesham altar room</h3>
+          <p class="card-desc" style="margin-top: 12px;">Home to the Drum, Cymbals, Bell and Conch Shell.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <hr class="hairline wrap">
 
-  <!-- Detail image -->
+  <!-- Top floor gallery -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div class="frame-img">
-        <img src="assets/image/DSC08031.JPG" alt="Carved wooden window on the upper storey, Folk Heritage building" loading="lazy">
-      </div>
-      <div>
-        <p class="eyebrow">Built for the Weather</p>
-        <h2 class="h-lg">Lit by trefoil windows.</h2>
-        <p style="margin-top: 20px; color: var(--charcoal-70);">Carved trefoil windows and sliding wooden shutters let daylight into the kitchen and living area while keeping out Thimphu's winter cold, the same joinery and craftsmanship found throughout the manor's timber-framed upper storey.</p>
+    <div class="wrap">
+      <div class="gallery-box" data-title="The Top Floor">
+        <div class="modal-media treasure-slider gallery-slider" role="region" aria-roledescription="carousel" aria-label="Photos of the top floor of the manor">
+          <ul class="slider-track" tabindex="0">
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4"><img src="assets/image/DSC08031.JPG" alt="Carved wooden window on the upper storey, Folk Heritage building" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4"><img src="assets/image/Third-Floor.jpg" alt="Top floor kitchen and altar room of the Folk Heritage manor" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4"><img src="assets/image/DSC_0066.JPG" alt="Tiered wooden roof and rammed-earth tower of the Folk Heritage building" loading="lazy"></li>
+            <li class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4"><img src="assets/image/DSC_0062.JPG" alt="Heritage house with a stone-walled courtyard and prayer flag pole" loading="lazy"></li>
+          </ul>
+          <button type="button" class="slider-btn slider-prev" aria-label="Previous photo"><span aria-hidden="true">&lsaquo;</span></button>
+          <button type="button" class="slider-btn slider-next" aria-label="Next photo"><span aria-hidden="true">&rsaquo;</span></button>
+          <p class="slider-count" aria-live="polite">1 / 4</p>
+          <div class="slider-dots"><button type="button" class="slider-dot" aria-label="Show photo 1"></button><button type="button" class="slider-dot" aria-label="Show photo 2"></button><button type="button" class="slider-dot" aria-label="Show photo 3"></button><button type="button" class="slider-dot" aria-label="Show photo 4"></button></div>
+        </div>
       </div>
     </div>
   </section>
@@ -160,7 +181,6 @@
       <nav aria-label="Footer">
         <p class="footer-heading">Navigation</p>
         <ul class="footer-nav">
-          <li><a href="restaurant.html">Restaurant</a></li>
           <li><a href="announcement.html">Announcement</a></li>
           <li><a href="support.html">Support Us</a></li>
         </ul>
@@ -204,6 +224,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=8"></script>
+<script src="treasures-slider.js?v=3" defer></script>
 </body>
 </html>

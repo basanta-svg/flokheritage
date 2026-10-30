@@ -1,6 +1,6 @@
 /* ==========================================================================
    Folk Heritage — Global Stylesheet
-   Editorial museum-restaurant. Near-monochrome palette; hierarchy from type,
+   Editorial museum. Near-monochrome palette; hierarchy from type,
    space and photography rather than colour.
    ========================================================================== */
 
@@ -20,7 +20,7 @@
   --font-display: Calibri, Arial, Helvetica, sans-serif;
   --font-body: Calibri, Cambria, Georgia, serif;
 
-  --section-pad: clamp(72px, 10vw, 160px);
+  --section-pad: clamp(56px, 7vw, 104px);
   --gutter: clamp(24px, 5vw, 64px);
   --max-width: 1440px;
 
@@ -145,7 +145,7 @@ h1, h2, h3, h4 {
   padding-top: var(--section-pad);
   padding-bottom: var(--section-pad);
 }
-.section-tight { padding-top: calc(var(--section-pad) * 0.6); padding-bottom: calc(var(--section-pad) * 0.6); }
+.section-tight { padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
 
 .section-dark {
   background: var(--color-charcoal);
@@ -1206,7 +1206,7 @@ h1, h2, h3, h4 {
   padding-top: clamp(150px, 20vw, 220px);
   padding-bottom: var(--section-pad);
 }
-.page-header .h-display { max-width: 16ch; }
+.page-header .h-display { max-width: none; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -1977,7 +1977,7 @@ h1, h2, h3, h4 {
 }
 .explore-collection {
   background: var(--color-cream);
-  padding: 100px 0;
+  padding: var(--section-pad) 0;
 }
 .explore-wrap {
   max-width: 1290px;
@@ -2172,9 +2172,6 @@ h1, h2, h3, h4 {
 .org-tier.is-visible .org-connector-bar { transform: scaleX(1); }
 .org-tier.is-visible .org-connector-trunk .org-dot { transform: translate(-50%, 0) scale(1); }
 .org-tier.is-visible .org-dot-sm { transform: scale(1); transition-delay: calc(var(--d, 0s) + 0.2s); }
-@media (max-width: 699px) {
-  .org-tier.is-visible .org-branch { transition-delay: 0s; }
-}
 .org-chart-tiered .org-dot { display: none; }
 
 /* ---------- Architecture: Construction Details ---------- */
@@ -2443,7 +2440,7 @@ h1, h2, h3, h4 {
 
 /* ---------- Architecture page: consistent section spacing ---------- */
 .build-section,
-.arch-house { padding-top: clamp(80px, 10vw, 160px); padding-bottom: clamp(80px, 10vw, 160px); }
+.arch-house { padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
 .build-specs { margin-top: clamp(40px, 5vw, 56px); }
 .build-grid { gap: clamp(48px, 6vw, 96px); }
 .arch-intro { margin-top: 20px; }
@@ -2746,3 +2743,223 @@ html.lb-open { overflow: hidden; }
 @media (max-width: 699px) {
   .gallery-box .gallery-slider { aspect-ratio: 4 / 3; }
 }
+
+/* ---------- Floor pages: balanced layout ---------- */
+.floor-hero { margin: 0; aspect-ratio: 21 / 9; }
+.floor-hero img { width: 100%; height: 100%; object-fit: cover; }
+.floor-features .h-lg { margin-bottom: clamp(28px, 3.5vw, 44px); margin-top: 8px; }
+@media (min-width: 800px) {
+  .floor-feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .floor-feature-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.floor-detail { align-items: center; }
+.floor-detail .frame-img { aspect-ratio: 4 / 3; }
+.floor-detail .frame-img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 699px) {
+  .floor-hero { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- No dead space: intro sections and image + text pairs ---------- */
+.intro-split-head { margin-bottom: clamp(28px, 3.5vw, 48px); }
+.intro-split-body {
+  display: grid;
+  gap: 20px clamp(32px, 5vw, 80px);
+}
+.intro-split-body .lede { margin-top: 0; max-width: none; }
+.intro-split-p {
+  margin-top: 0;
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+}
+@media (min-width: 800px) {
+  .intro-split-body { grid-template-columns: repeat(2, 1fr); align-items: start; }
+}
+/* An image beside text: centre the text against the picture and cap the picture height */
+@media (min-width: 800px) {
+  .grid-2:has(> .frame-img) { align-items: center; }
+}
+.grid-2 > .frame-img img { width: 100%; max-height: 440px; object-fit: cover; }
+.grid-2 > .frame-img.founder-portrait img { max-height: none; }
+
+@media (min-width: 800px) {
+  .floor-feature-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .objectives-cols { grid-template-columns: repeat(2, 1fr); gap: 12px clamp(32px, 5vw, 80px) !important; }
+}
+
+/* A single intro paragraph flows into two balanced columns instead of leaving one side empty */
+@media (min-width: 800px) {
+  .intro-split-single { display: block; columns: 2; column-gap: clamp(32px, 5vw, 80px); }
+  .intro-split-single .lede { max-width: none; }
+}
+
+/* ---------- About: Vision & Mission, Objectives ---------- */
+.vm-head { text-align: center; }
+.vm-orn {
+  position: relative;
+  display: block;
+  width: min(220px, 60%);
+  height: 1px;
+  margin: 22px auto 0;
+  background: var(--charcoal-40);
+}
+.vm-orn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: var(--color-cream);
+  border: 1px solid var(--charcoal-40);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.obj-grid { display: grid; gap: 24px; }
+@media (min-width: 700px) { .obj-grid { grid-template-columns: repeat(2, 1fr); } .obj-grid .obj-card:last-child { grid-column: 1 / -1; } }
+@media (min-width: 1000px) {
+  .obj-grid { grid-template-columns: repeat(6, 1fr); }
+  .obj-grid .obj-card { grid-column: span 2; }
+  .obj-grid .obj-card:nth-child(n+4) { grid-column: span 3; }
+}
+.obj-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(28px, 3vw, 40px);
+  border: 1px solid var(--charcoal-10);
+  border-radius: 20px;
+  background: var(--color-card);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.obj-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(35, 35, 35, 0.12); }
+.obj-num {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(40px, 4vw, 56px);
+  line-height: 1;
+  color: var(--charcoal-20);
+}
+.obj-card .card-desc { margin-top: 0; }
+
+/* Advisory Committee: member cards use the same card design as the Our Team page */
+.org-chart-cards .team-card {
+  width: 100%;
+  opacity: 1;
+  transform: none;
+  transition: box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.org-chart-cards .team-card:hover { transform: translateY(-4px); }
+.org-chart-cards .org-branch-top { width: 100%; max-width: 240px; }
+.org-chart-cards .org-row .team-card { max-width: 240px; }
+.org-chart-cards .org-row { max-width: 800px; gap: 40px 24px; }
+.org-chart-cards .org-connector-bar { max-width: 560px; }
+.team-org {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--charcoal-70);
+}
+@media (max-width: 699px) {
+  .org-chart-cards .org-row .team-card { max-width: none; }
+}
+
+/* Dropdown triggers (Architecture, Announcement, About) are labels only; the pages are reached from their menus */
+.nav-trigger {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-family: inherit;
+  cursor: default;
+}
+.nav-trigger:focus-visible { outline: 2px solid var(--color-charcoal); outline-offset: 4px; }
+.org-chart-cards .org-tier-more { margin-top: 24px; }
+
+/* ---------- About: The Heritage ---------- */
+.heritage-grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 72px);
+  margin-top: clamp(28px, 4vw, 48px);
+  align-items: start;
+}
+@media (min-width: 900px) { .heritage-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); } }
+.heritage-text p {
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+}
+.heritage-text p + p { margin-top: 22px; }
+.heritage-photos { display: grid; gap: 24px; }
+@media (min-width: 900px) { .heritage-photos { position: sticky; top: 120px; } }
+.heritage-photos .frame-img { margin: 0; aspect-ratio: 4 / 3; }
+.heritage-photos .frame-img img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+
+/* Vision & Mission use the same card as Our Objectives */
+.vm-grid { display: grid; gap: 24px; margin-top: clamp(40px, 5vw, 64px); }
+@media (min-width: 800px) { .vm-grid { grid-template-columns: 1fr 1fr; } }
+.vm-card-icon {
+  width: clamp(40px, 4vw, 56px);
+  height: clamp(40px, 4vw, 56px);
+  fill: none;
+  stroke: var(--charcoal-20);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.vm-card .card-desc { max-width: none; }
+.vm-card .card-desc + .card-desc { margin-top: 4px; padding-top: 16px; border-top: 1px solid var(--charcoal-10); }
+
+/* Three cards in a row on desktop (e.g. Climate & Craft) */
+@media (min-width: 1000px) {
+  .obj-grid.obj-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .obj-grid.obj-grid-3 .obj-card,
+  .obj-grid.obj-grid-3 .obj-card:last-child,
+  .obj-grid.obj-grid-3 .obj-card:nth-child(n+4) { grid-column: span 1; }
+}
+
+/* Three intro paragraphs: one column each on a wide screen, so no side is left empty */
+.intro-split-three .lede { max-width: none; }
+@media (min-width: 1000px) {
+  .intro-split-three { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Longer intro paragraphs sit at lede size without a width cap */
+.intro-split-body .lede { max-width: none; }
+
+/* ---------- Homepage: What's On card slider ---------- */
+.news-controls { display: flex; gap: 12px; }
+.news-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--charcoal-20);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-charcoal);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+.news-btn:hover:not(:disabled) { background: var(--color-charcoal); color: var(--color-cream); border-color: var(--color-charcoal); }
+.news-btn:disabled { opacity: 0.3; cursor: default; }
+.news-btn:focus-visible { outline: 2px solid var(--color-charcoal); outline-offset: 3px; }
+.news-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 8px 0 12px;
+  -webkit-overflow-scrolling: touch;
+}
+.news-track::-webkit-scrollbar { display: none; }
+.news-track:focus-visible { outline: 2px solid var(--color-charcoal); outline-offset: 6px; border-radius: 8px; }
+.news-track > .card { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
+@media (min-width: 700px) { .news-track > .card { flex-basis: 46%; } }
+@media (min-width: 1000px) { .news-track > .card { flex-basis: calc((100% - 48px) / 2.6); } }
