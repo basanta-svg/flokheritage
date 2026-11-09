@@ -431,6 +431,36 @@
 
     var exploreCards = exploreGrid.querySelectorAll('.explore-card');
 
+    /* Slider: the cards sit in a scroll-snap track with previous / next buttons */
+    var explorePrev = document.querySelector('.explore-prev');
+    var exploreNext = document.querySelector('.explore-next');
+    if (explorePrev && exploreNext) {
+      var exploreMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      var exploreStep = function () {
+        var card = exploreGrid.querySelector('.explore-card');
+        return card ? card.getBoundingClientRect().width + 30 : exploreGrid.clientWidth;
+      };
+      var exploreUpdate = function () {
+        var max = exploreGrid.scrollWidth - exploreGrid.clientWidth - 2;
+        explorePrev.disabled = exploreGrid.scrollLeft <= 2;
+        exploreNext.disabled = exploreGrid.scrollLeft >= max;
+      };
+      explorePrev.addEventListener('click', function () {
+        exploreGrid.scrollBy({ left: -exploreStep(), behavior: exploreMotion });
+      });
+      exploreNext.addEventListener('click', function () {
+        exploreGrid.scrollBy({ left: exploreStep(), behavior: exploreMotion });
+      });
+      exploreGrid.addEventListener('scroll', exploreUpdate, { passive: true });
+      exploreGrid.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); exploreNext.click(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); explorePrev.click(); }
+      });
+      window.addEventListener('resize', exploreUpdate);
+      exploreUpdate();
+    }
+
+
     // Touch devices: first tap reveals the overlay, second tap follows the link.
     if (window.matchMedia('(hover: none)').matches) {
       exploreCards.forEach(function (card) {

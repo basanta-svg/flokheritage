@@ -2963,3 +2963,131 @@ html.lb-open { overflow: hidden; }
 .news-track > .card { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
 @media (min-width: 700px) { .news-track > .card { flex-basis: 46%; } }
 @media (min-width: 1000px) { .news-track > .card { flex-basis: calc((100% - 48px) / 2.6); } }
+
+/* ---------- Contact form: calendar dropdown ---------- */
+.date-picker { position: relative; }
+.date-picker input { cursor: pointer; padding-right: 40px; }
+.date-picker-icon {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.date-picker-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--color-charcoal);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dp-pop {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 10px);
+  left: 0;
+  width: min(340px, 100%);
+  padding: 20px;
+  border: 1px solid var(--charcoal-10);
+  border-radius: 20px;
+  background: var(--color-card);
+  box-shadow: 0 18px 44px rgba(35, 35, 35, 0.16);
+  animation: dp-in 0.22s var(--ease);
+}
+.dp-pop[hidden] { display: none; }
+@keyframes dp-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.dp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.dp-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--color-charcoal);
+}
+.dp-nav {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--charcoal-20);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-charcoal);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.dp-nav:hover:not(:disabled) { background: var(--color-charcoal); color: var(--color-cream); border-color: var(--color-charcoal); }
+.dp-nav:disabled { opacity: 0.3; cursor: default; }
+.dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px 2px; text-align: center; }
+.dp-dow {
+  padding-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+}
+.dp-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.dp-day:hover:not(:disabled) { background: var(--charcoal-10); }
+.dp-day.is-today { border-color: var(--charcoal-40); }
+.dp-day.is-selected, .dp-day.is-selected:hover { background: var(--color-charcoal); color: var(--color-cream); border-color: var(--color-charcoal); }
+.dp-day:disabled { opacity: 0.28; cursor: default; }
+.dp-day:focus-visible, .dp-nav:focus-visible, .dp-link:focus-visible { outline: 2px solid var(--color-charcoal); outline-offset: 2px; }
+.dp-foot { display: flex; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--charcoal-10); }
+.dp-link {
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  cursor: pointer;
+}
+.dp-link:hover { opacity: 0.6; }
+@media (prefers-reduced-motion: reduce) { .dp-pop { animation: none; } }
+
+/* ---------- Homepage: Explore the Treasures slider ---------- */
+.explore-grid {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 0;
+  -webkit-overflow-scrolling: touch;
+}
+.explore-grid::-webkit-scrollbar { display: none; }
+.explore-grid:focus-visible { outline: 2px solid var(--color-charcoal); outline-offset: 6px; border-radius: 8px; }
+.explore-card { flex: 0 0 calc((100% - 90px) / 3.25); scroll-snap-align: start; }
+@media (max-width: 1024px) { .explore-card { flex-basis: 46%; } }
+@media (max-width: 600px) { .explore-card { flex-basis: 80%; } }
+.explore-controls { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
