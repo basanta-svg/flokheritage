@@ -856,15 +856,23 @@ h1, h2, h3, h4 {
 }
 .hero-intro-top {
   display: flex;
+  min-width: 0;
 }
 .hero-intro-title {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 0.95;
   letter-spacing: 0.005em;
-  font-size: clamp(40px, 6.4vw, 84px);
-  white-space: nowrap;
+  font-size: clamp(28px, 9vw, 84px);
+  white-space: normal;
+  min-width: 0;
+}
+@media (min-width: 560px) {
+  .hero-intro-title {
+    font-size: clamp(40px, 6.4vw, 84px);
+    white-space: nowrap;
+  }
 }
 /* ---------- Scroll-driven reveal panel ---------- */
 /* Tall scroll track; the inner .hero-reveal-sticky pins for one viewport
@@ -1661,6 +1669,32 @@ h1, h2, h3, h4 {
   outline: none;
 }
 .field textarea { resize: vertical; min-height: 120px; }
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--color-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23232323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  border: 1.5px solid var(--charcoal-20);
+  border-radius: 8px;
+  padding: 14px 44px 14px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.field select:hover {
+  border-color: var(--charcoal-40);
+  background-color: var(--charcoal-10);
+}
+.field select:focus {
+  border-color: var(--color-charcoal);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px var(--charcoal-10);
+}
+.field select:invalid { color: var(--charcoal-70); }
 .field-error {
   display: block;
   font-size: 12px;
@@ -2010,6 +2044,7 @@ h1, h2, h3, h4 {
   display: block;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  border-radius: 16px;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
